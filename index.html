@@ -44,6 +44,7 @@ nav{background:rgba(251,247,240,0.95);backdrop-filter:blur(8px);border-bottom:1p
 .launch-hint{margin-top:0.9rem;font-size:0.78rem;color:var(--text3)}
 .launch-hint strong{color:var(--peach-dark)}
 .success-msg{display:none;margin-top:0.8rem;font-size:0.82rem;font-weight:700;color:var(--mint-dark)}
+.error-msg{display:none;margin-top:0.8rem;font-size:0.82rem;font-weight:700;color:var(--peach-dark)}
 .counter-line{margin-top:1.2rem;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text2)}
 .counter-avatars{display:flex}
 .counter-avatars div{width:28px;height:28px;border-radius:50%;border:2px solid var(--cream);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
@@ -161,6 +162,7 @@ nav{background:rgba(251,247,240,0.95);backdrop-filter:blur(8px);border-bottom:1p
 .cta-form input::placeholder{color:rgba(255,255,255,0.55)}
 .cta-form button{background:white;color:var(--mint-dark);border:none;font-weight:700;font-family:'Nunito',sans-serif;font-size:0.82rem;padding:0.9rem 1.4rem;cursor:pointer;white-space:nowrap}
 .cta-success{display:none;margin-top:1rem;font-size:0.82rem;font-weight:700;color:var(--butter)}
+.cta-error{display:none;margin-top:1rem;font-size:0.82rem;font-weight:700;color:#FCE4D6}
 footer{background:var(--cream2);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(44,36,24,0.08)}
 .footer-logo{font-weight:800;font-size:1.1rem;color:var(--text)}
 .footer-logo span{color:var(--mint-dark)}
@@ -219,7 +221,7 @@ footer{background:var(--cream2);padding:2rem 2.5rem;display:flex;justify-content
     <p class="hero-sub en" style="display:none">Premium formulas with science-backed ingredients, in a soft chew format your dog will love every single day.</p>
     <div class="email-wrap">
       <input type="email" id="hero-email" placeholder="tu@email.com">
-      <button onclick="submitEmail('hero-email','hero-success','.email-wrap button')">
+      <button onclick="submitEmail('hero-email','hero-success','.email-wrap button','hero-error')">
         <span class="es">Avísame</span><span class="en" style="display:none">Notify me</span>
       </button>
     </div>
@@ -228,6 +230,10 @@ footer{background:var(--cream2);padding:2rem 2.5rem;display:flex;justify-content
     <p class="success-msg" id="hero-success">
       <span class="es">✓ ¡Apuntado! Te avisamos pronto.</span>
       <span class="en" style="display:none">✓ You're in! We'll be in touch.</span>
+    </p>
+    <p class="error-msg" id="hero-error">
+      <span class="es">✗ Algo falló. Vuelve a intentarlo en un momento.</span>
+      <span class="en" style="display:none">✗ Something went wrong. Please try again.</span>
     </p>
     <div class="counter-line">
       <div class="counter-avatars">
@@ -522,9 +528,10 @@ footer{background:var(--cream2);padding:2rem 2.5rem;display:flex;justify-content
   <p class="en" style="display:none">Launching on Amazon Spain and Germany in summer 2026. Early sign-ups get a launch discount.</p>
   <div class="cta-form">
     <input type="email" id="cta-email" placeholder="tu@email.com">
-    <button onclick="submitEmail('cta-email','cta-success','.cta-form button')"><span class="es">Avísame</span><span class="en" style="display:none">Notify me</span></button>
+    <button onclick="submitEmail('cta-email','cta-success','.cta-form button','cta-error')"><span class="es">Avísame</span><span class="en" style="display:none">Notify me</span></button>
   </div>
   <p class="cta-success" id="cta-success"><span class="es">✓ ¡Genial! Te avisamos pronto.</span><span class="en" style="display:none">✓ Great! We'll be in touch.</span></p>
+  <p class="cta-error" id="cta-error"><span class="es">✗ Algo falló. Vuelve a intentarlo en un momento.</span><span class="en" style="display:none">✗ Something went wrong. Please try again.</span></p>
 </div>
 
 <footer>
@@ -544,15 +551,29 @@ function animateCounter(){
   baseCount++;
   ['counter-num','counter-num2','counter-num3'].forEach(id=>{var el=document.getElementById(id);if(el)el.textContent=baseCount;});
 }
-function submitEmail(inputId,successId,btnSelector){
+function submitEmail(inputId,successId,btnSelector,errorId){
   var i=document.getElementById(inputId);
   var s=document.getElementById(successId);
+  var e=errorId?document.getElementById(errorId):null;
   var b=document.querySelector(btnSelector);
-  if(i.value&&i.value.includes('@')){
-    i.disabled=true;if(b)b.disabled=true;s.style.display='block';animateCounter();
-  } else {
-    i.style.outline='2px solid #E8A087';setTimeout(()=>i.style.outline='',1000);
+  if(e)e.style.display='none';
+  if(!(i.value&&i.value.includes('@'))){
+    i.style.outline='2px solid #E8A087';setTimeout(function(){i.style.outline=''},1000);
+    return;
   }
+  if(b)b.disabled=true;
+  var body='fields[email]='+encodeURIComponent(i.value)+'&ml-submit=1';
+  fetch('https://assets.mailerlite.com/jsonp/2274921/forms/185001378556413931/subscribe',{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:body
+  }).then(function(){
+    i.disabled=true;s.style.display='block';animateCounter();
+  }).catch(function(){
+    if(b)b.disabled=false;
+    if(e)e.style.display='block';
+  });
 }
 function quizNext(step,val){
   document.getElementById('qs'+step).classList.remove('active');
@@ -589,5 +610,6 @@ function toggleFaq(el){
   if(!wasOpen)item.classList.add('open');
 }
 </script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"></script>
 </body>
 </html>
