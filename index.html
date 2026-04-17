@@ -74,24 +74,13 @@ nav{background:var(--white);border-bottom:2.5px solid var(--navy);padding:18px 3
 .stat-lbl{font-size:10px;font-weight:700;color:var(--gris);text-transform:uppercase;letter-spacing:1px}
 
 /* HERO RIGHT — product stage */
-.hero-right{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
-.stage-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:75%;aspect-ratio:1;border-radius:50%;background:var(--cian);border:2.5px solid var(--navy)}
-.deco{position:absolute;border-radius:50%;border:2.5px solid var(--navy)}
-.deco-yellow{width:100px;height:100px;background:var(--amarillo);top:8%;right:8%;box-shadow:4px 4px 0 var(--navy)}
-.deco-fucsia{width:60px;height:60px;background:var(--fucsia);bottom:12%;left:10%;box-shadow:3px 3px 0 var(--navy)}
-.deco-navy{width:35px;height:35px;background:var(--navy);top:14%;left:16%}
+.hero-right{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;max-width:700px;width:100%;justify-self:center}
+.hero-stage{position:relative;width:92%;aspect-ratio:1;border-radius:50%;background:var(--cian);border:2.5px solid var(--navy);box-shadow:6px 6px 0 var(--navy);overflow:hidden}
+.hero-stage img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
 
-.doypack{position:relative;width:52%;aspect-ratio:0.68;background:var(--white);border:3px solid var(--navy);border-radius:14px 14px 32px 32px;transform:rotate(-4deg);box-shadow:6px 6px 0 var(--navy);padding:18px 14px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
-.dp-logo{font-weight:900;font-size:14px;color:var(--navy);letter-spacing:-0.5px}
-.dp-band{background:var(--fucsia);color:var(--white);font-weight:900;font-size:11px;text-align:center;padding:8px 6px;width:calc(100% + 28px);margin:0 -14px;letter-spacing:0.5px;line-height:1.2;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy)}
-.dp-badge{background:var(--amarillo);color:var(--navy);font-size:8px;font-weight:900;padding:4px 8px;border-radius:999px;border:1.5px solid var(--navy);letter-spacing:0.5px;text-transform:uppercase;white-space:nowrap}
-.dp-icons{display:flex;gap:8px;margin-top:4px}
-.dp-icon{width:30px;height:30px;border-radius:50%;background:var(--amarillo);border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;font-size:14px}
-.dp-meta{font-size:9px;font-weight:900;color:var(--navy);letter-spacing:0.5px;margin-top:auto}
-
-.floater{position:absolute;background:var(--white);border:2.5px solid var(--navy);border-radius:999px;padding:8px 14px;font-size:11px;font-weight:900;color:var(--navy);box-shadow:4px 4px 0 var(--navy);letter-spacing:0.5px;z-index:3;white-space:nowrap}
-.floater-top{top:18%;right:4%;transform:rotate(4deg)}
-.floater-bot{bottom:16%;left:2%;transform:rotate(-6deg);background:var(--amarillo)}
+.floater{position:absolute;background:var(--white);border:2.5px solid var(--navy);border-radius:999px;padding:9px 16px;font-size:12px;font-weight:900;color:var(--navy);box-shadow:4px 4px 0 var(--navy);letter-spacing:0.5px;z-index:3;white-space:nowrap}
+.floater-top{top:8%;right:-2%;transform:rotate(4deg)}
+.floater-bot{bottom:10%;left:-2%;transform:rotate(-6deg);background:var(--amarillo)}
 
 /* BENEFICIOS */
 .benefits{background:var(--cream);border-top:3px solid var(--navy);padding:44px 40px}
@@ -116,14 +105,8 @@ nav{background:var(--white);border-bottom:2.5px solid var(--navy);padding:18px 3
 .pc-fucsia{background:var(--fucsia)}
 .pc-amarillo{background:var(--amarillo)}
 .pc-tag{position:absolute;top:14px;right:14px;background:var(--white);border:2px solid var(--navy);border-radius:999px;font-size:9px;font-weight:900;color:var(--navy);padding:5px 10px;letter-spacing:0.8px}
-.pc-mini{width:58%;aspect-ratio:0.7;background:var(--white);border:2.5px solid var(--navy);border-radius:10px 10px 22px 22px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;box-shadow:3px 3px 0 var(--navy);margin-top:6px}
-.pc-mini-logo{font-size:9px;font-weight:900;color:var(--navy);letter-spacing:-0.3px}
-.pc-mini-band{width:calc(100% + 16px);margin:0 -8px;font-size:8px;font-weight:900;color:var(--white);text-align:center;padding:5px 2px;letter-spacing:0.5px;border-top:1.5px solid var(--navy);border-bottom:1.5px solid var(--navy);line-height:1.2}
-.pc-cian .pc-mini-band{background:var(--cian);color:var(--navy)}
-.pc-fucsia .pc-mini-band{background:var(--fucsia);color:var(--white)}
-.pc-amarillo .pc-mini-band{background:var(--amarillo);color:var(--navy)}
-.pc-mini-badge{background:var(--amarillo);color:var(--navy);font-size:6.5px;font-weight:900;padding:2.5px 6px;border-radius:999px;border:1px solid var(--navy);letter-spacing:0.5px;white-space:nowrap}
-.pc-mini-meta{font-size:7px;font-weight:900;color:var(--navy);margin-top:auto;letter-spacing:0.5px}
+.pc-img-wrap{width:100%;max-width:220px;background:var(--white);border:2.5px solid var(--navy);border-radius:16px;padding:12px;box-shadow:3px 3px 0 var(--navy);margin-top:6px;display:flex;align-items:center;justify-content:center}
+.pc-img-wrap img{width:100%;max-width:180px;height:auto;display:block}
 .pc-title{font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-0.4px;text-align:center}
 .pc-desc{font-size:12px;color:var(--navy);line-height:1.5;text-align:center;max-width:220px}
 .pc-chips{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
@@ -185,7 +168,6 @@ footer{background:var(--navy);padding:32px 40px;display:flex;justify-content:spa
   .email-wrap,.cta-form{flex-direction:column}
   .email-wrap button,.cta-form button{border-left:none;border-top:2.5px solid var(--navy)}
   .benefits-grid{grid-template-columns:1fr}
-  .deco-navy{display:none}
   .btn-cta{display:none}
   .faq-a{padding-left:20px}
 }
@@ -281,25 +263,11 @@ footer{background:var(--navy);padding:32px 40px;display:flex;justify-content:spa
   </div>
 
   <div class="hero-right">
-    <div class="stage-circle"></div>
-    <div class="deco deco-yellow"></div>
-    <div class="deco deco-fucsia"></div>
-    <div class="deco deco-navy"></div>
-
-    <div class="doypack">
-      <div class="dp-logo">bondi pets</div>
-      <div class="dp-badge">VETERINARIAN RECOMMENDED</div>
-      <div class="dp-band">HIP &amp; JOINTS<br>+PROBIOTICS</div>
-      <div class="dp-icons">
-        <div class="dp-icon">🦴</div>
-        <div class="dp-icon">💪</div>
-        <div class="dp-icon">🌿</div>
-      </div>
-      <div class="dp-meta">120 CHEWS · 300g</div>
+    <div class="hero-stage">
+      <img src="images/hero-dog-eating.png" alt="Golden retriever feliz recibiendo un soft chew Bondi Pets en una cocina luminosa" width="700" height="700">
     </div>
-
-    <div class="floater floater-top">🌿 SIN RELLENOS</div>
-    <div class="floater floater-bot">⭐ 18 ACTIVOS</div>
+    <div class="floater floater-top">⭐ 18 ACTIVOS</div>
+    <div class="floater floater-bot">🌿 SIN RELLENOS</div>
   </div>
 </section>
 
@@ -351,11 +319,8 @@ footer{background:var(--navy);padding:32px 40px;display:flex;justify-content:spa
 
     <div class="pcard pc-cian">
       <span class="pc-tag"><span class="es">ARTICULACIONES</span><span class="en" style="display:none">JOINTS</span></span>
-      <div class="pc-mini">
-        <div class="pc-mini-logo">bondi pets</div>
-        <div class="pc-mini-badge">VET REC</div>
-        <div class="pc-mini-band">HIP &amp; JOINTS</div>
-        <div class="pc-mini-meta">120 · 300g</div>
+      <div class="pc-img-wrap">
+        <img src="images/doypack-condroprotector.png" alt="Doypack Bondi Pets Condroprotector para articulaciones con 18 activos" loading="lazy" width="220" height="290">
       </div>
       <div class="pc-title es">Condroprotector</div>
       <div class="pc-title en" style="display:none">Joint Support</div>
@@ -370,11 +335,8 @@ footer{background:var(--navy);padding:32px 40px;display:flex;justify-content:spa
 
     <div class="pcard pc-fucsia">
       <span class="pc-tag"><span class="es">DIGESTIÓN</span><span class="en" style="display:none">DIGESTION</span></span>
-      <div class="pc-mini">
-        <div class="pc-mini-logo">bondi pets</div>
-        <div class="pc-mini-badge">VET REC</div>
-        <div class="pc-mini-band">BIOTICS</div>
-        <div class="pc-mini-meta">120 · 300g</div>
+      <div class="pc-img-wrap">
+        <img src="images/doypack-biotics.png" alt="Doypack Bondi Pets Pre+Pro+Post Biotics para digestión y microbioma" loading="lazy" width="220" height="290">
       </div>
       <div class="pc-title es">Pre+Pro+Post</div>
       <div class="pc-title en" style="display:none">Pre+Pro+Post</div>
@@ -389,11 +351,8 @@ footer{background:var(--navy);padding:32px 40px;display:flex;justify-content:spa
 
     <div class="pcard pc-amarillo">
       <span class="pc-tag"><span class="es">VITALIDAD</span><span class="en" style="display:none">VITALITY</span></span>
-      <div class="pc-mini">
-        <div class="pc-mini-logo">bondi pets</div>
-        <div class="pc-mini-badge">VET REC</div>
-        <div class="pc-mini-band">MULTIVIT</div>
-        <div class="pc-mini-meta">120 · 300g</div>
+      <div class="pc-img-wrap">
+        <img src="images/doypack-multivitamin.png" alt="Doypack Bondi Pets Multivitamin con vitaminas minerales y antioxidantes" loading="lazy" width="220" height="290">
       </div>
       <div class="pc-title es">Multivitamin</div>
       <div class="pc-title en" style="display:none">Multivitamin</div>
