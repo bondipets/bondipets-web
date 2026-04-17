@@ -184,7 +184,7 @@ footer{background:var(--cream2);padding:2rem 2.5rem;display:flex;justify-content
 <body>
 
 <div class="proof-bar">
-  🐾 <span id="counter-num">143</span> personas ya apuntadas al lanzamiento
+  🐾 <span id="counter-num">250</span> personas ya apuntadas al lanzamiento
 </div>
 
 <nav>
@@ -236,8 +236,8 @@ footer{background:var(--cream2);padding:2rem 2.5rem;display:flex;justify-content
         <div style="background:#FCE4D6;color:#7A3728">J</div>
         <div style="background:#FFF3CD;color:#6B4C0A">R</div>
       </div>
-      <span class="es" style="font-size:0.78rem;color:var(--text2)"><strong id="counter-num2">143</strong> personas ya apuntadas</span>
-      <span class="en" style="display:none;font-size:0.78rem;color:var(--text2)"><strong id="counter-num3">143</strong> people signed up</span>
+      <span class="es" style="font-size:0.78rem;color:var(--text2)"><strong id="counter-num2">250</strong> personas ya apuntadas</span>
+      <span class="en" style="display:none;font-size:0.78rem;color:var(--text2)"><strong id="counter-num3">250</strong> people signed up</span>
     </div>
   </div>
   <div class="hero-right">
@@ -539,7 +539,7 @@ function setLang(l){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('.lang-btn').forEach(b=>{if(b.textContent===l.toUpperCase())b.classList.add('active')});
 }
-var baseCount=143;
+var baseCount=250;
 function animateCounter(){
   baseCount++;
   ['counter-num','counter-num2','counter-num3'].forEach(id=>{var el=document.getElementById(id);if(el)el.textContent=baseCount;});
