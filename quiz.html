@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz · Bondi Pets</title>
+<meta name="description" content="5 preguntas rápidas para descubrir qué suplemento necesita tu perro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --fucsia:#FF2D87;
+  --amarillo:#FFDE4D;
+  --cian:#4BC7FA;
+  --navy:#1A237E;
+  --cream:#FFFBF0;
+  --white:#FFFFFF;
+  --gris:#6B7280;
+  --gris-claro:#EEF0F4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--white);color:var(--navy);min-height:100vh;font-weight:400;line-height:1.5;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+
+/* NAV (igual que index.html) */
+nav{background:var(--white);border-bottom:2.5px solid var(--navy);padding:18px 36px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-weight:900;font-size:24px;color:var(--navy);letter-spacing:-0.8px;cursor:pointer;line-height:1}
+.logo span{color:var(--fucsia)}
+.nav-right{display:flex;gap:24px;align-items:center}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-link{font-size:13px;font-weight:700;color:var(--navy);cursor:pointer;transition:color 0.15s}
+.nav-link:hover{color:var(--fucsia)}
+.lang-toggle{display:flex;background:var(--gris-claro);border-radius:999px;padding:3px;gap:2px}
+.lang-btn{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:none;background:transparent;cursor:pointer;color:var(--navy)}
+.lang-btn.active{background:var(--white);color:var(--fucsia)}
+.btn-cta{background:var(--fucsia);color:var(--white);font-weight:900;font-size:12px;padding:10px 18px;border-radius:999px;border:2.5px solid var(--navy);cursor:pointer;font-family:'Lato',sans-serif;letter-spacing:0.8px;box-shadow:3px 3px 0 var(--navy);transition:transform 0.1s,box-shadow 0.1s}
+.btn-cta:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--navy)}
+.btn-cta:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--navy)}
+
+/* QUIZ SHELL */
+.quiz{flex:1;display:flex;flex-direction:column;padding:36px 20px 60px;max-width:640px;width:100%;margin:0 auto}
+.progress{display:flex;justify-content:center;gap:10px;margin-bottom:40px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--white);border:2.5px solid var(--navy);transition:background 0.3s ease,transform 0.3s ease}
+.dot.active{background:var(--fucsia);transform:scale(1.15)}
+.dot.done{background:var(--navy)}
+
+/* STEPS */
+.step{display:none;animation:stepIn 0.35s ease}
+.step.active{display:block}
+@keyframes stepIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.step-title{font-weight:900;font-size:28px;color:var(--navy);letter-spacing:-0.8px;line-height:1.15;margin-bottom:12px;text-align:center}
+.step-sub{font-size:16px;color:var(--gris);text-align:center;margin-bottom:32px}
+
+/* INTRO */
+.intro{text-align:center;padding-top:40px}
+.intro h1{font-weight:900;font-size:40px;color:var(--navy);letter-spacing:-1.2px;line-height:1.05;margin-bottom:14px}
+.intro p{font-size:16px;color:var(--gris);margin-bottom:32px;max-width:420px;margin-left:auto;margin-right:auto}
+.btn-primary{display:inline-block;background:var(--fucsia);color:var(--white);font-family:'Lato',sans-serif;font-weight:900;font-size:15px;padding:16px 40px;border-radius:999px;border:2.5px solid var(--navy);cursor:pointer;letter-spacing:0.8px;box-shadow:4px 4px 0 var(--amarillo);transition:transform 0.1s,box-shadow 0.1s;text-transform:uppercase}
+.btn-primary:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--amarillo)}
+.btn-primary:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--amarillo)}
+.btn-primary:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:4px 4px 0 var(--amarillo)}
+.intro-hint{margin-top:18px;font-size:13px;color:var(--gris);font-weight:700}
+
+/* NAME INPUT */
+.name-input{width:100%;max-width:420px;margin:0 auto 24px;display:block;border:2.5px solid var(--navy);border-radius:12px;padding:16px 18px;font-family:'Lato',sans-serif;font-size:16px;font-weight:700;color:var(--navy);outline:none;background:var(--white);box-shadow:4px 4px 0 var(--amarillo);text-align:center}
+.name-input::placeholder{color:var(--gris);font-weight:400}
+.name-input:focus{border-color:var(--fucsia)}
+.step-actions{text-align:center;margin-top:14px}
+
+/* OPTIONS */
+.options{display:flex;flex-direction:column;gap:12px;max-width:480px;margin:0 auto}
+.option{background:var(--white);border:2.5px solid var(--navy);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:border-color 0.15s,background 0.15s,transform 0.1s;text-align:left;font-family:'Lato',sans-serif;box-shadow:3px 3px 0 var(--navy)}
+.option:hover{border-color:var(--fucsia);transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--navy)}
+.option.picked{background:var(--amarillo);border-color:var(--fucsia);animation:flash 0.4s ease}
+@keyframes flash{0%{background:var(--white)}40%{background:var(--amarillo)}100%{background:var(--amarillo)}}
+.option-icon{font-size:28px;flex-shrink:0;line-height:1}
+.option-text{font-size:15px;font-weight:700;color:var(--navy);line-height:1.35;flex:1}
+
+/* RESULT */
+.result{text-align:center;animation:stepIn 0.45s ease}
+.result-badge{display:inline-block;background:var(--fucsia);color:var(--white);font-size:11px;font-weight:900;letter-spacing:2px;padding:7px 14px;border-radius:999px;border:2.5px solid var(--navy);margin-bottom:22px;text-transform:uppercase}
+.result-img{max-width:280px;width:100%;height:auto;display:block;margin:0 auto 24px;border:2.5px solid var(--navy);border-radius:18px;box-shadow:5px 5px 0 var(--navy);background:var(--cream)}
+.result-title{font-weight:900;font-size:32px;color:var(--navy);letter-spacing:-0.8px;margin-bottom:8px;line-height:1.05}
+.result-sub{font-size:16px;color:var(--fucsia);font-style:italic;font-weight:700;margin-bottom:22px}
+.result-senior{background:var(--amarillo);border:2.5px solid var(--navy);border-radius:12px;padding:12px 16px;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:22px;box-shadow:3px 3px 0 var(--navy)}
+.result-bullets{list-style:none;margin:0 auto 26px;max-width:400px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.result-bullets li{display:flex;gap:10px;font-size:14px;font-weight:700;color:var(--navy);padding:10px 14px;background:var(--cream);border:2px solid var(--navy);border-radius:10px}
+.result-bullets li::before{content:'✓';color:var(--fucsia);font-weight:900;flex-shrink:0}
+.result-sep{height:2.5px;background:var(--navy);max-width:120px;margin:0 auto 26px}
+
+.email-block h3{font-weight:900;font-size:18px;color:var(--navy);margin-bottom:16px;line-height:1.3}
+.email-wrap{display:flex;background:var(--white);border:2.5px solid var(--navy);border-radius:12px;max-width:420px;margin:0 auto;box-shadow:4px 4px 0 var(--amarillo);overflow:hidden}
+.email-wrap input{flex:1;border:none;outline:none;padding:14px 16px;font-size:14px;font-family:'Lato',sans-serif;background:transparent;color:var(--navy);font-weight:400}
+.email-wrap input::placeholder{color:var(--gris)}
+.email-wrap button{background:var(--fucsia);color:var(--white);border:none;font-weight:900;font-family:'Lato',sans-serif;font-size:13px;padding:14px 22px;cursor:pointer;white-space:nowrap;letter-spacing:0.8px;border-left:2.5px solid var(--navy)}
+.email-wrap button:hover{background:var(--navy)}
+.success-msg,.error-msg{display:none;margin-top:12px;font-size:14px;font-weight:900}
+.success-msg{color:var(--navy)}
+.error-msg{color:var(--fucsia)}
+
+.result-actions{margin-top:32px;display:flex;flex-direction:column;gap:12px;align-items:center}
+.btn-outline{display:inline-block;background:var(--white);color:var(--navy);font-family:'Lato',sans-serif;font-weight:900;font-size:13px;padding:12px 26px;border-radius:999px;border:2.5px solid var(--navy);cursor:pointer;letter-spacing:0.8px;text-transform:uppercase;transition:background 0.15s,color 0.15s}
+.btn-outline:hover{background:var(--navy);color:var(--amarillo)}
+.btn-text{background:none;border:none;color:var(--gris);font-family:'Lato',sans-serif;font-size:13px;font-weight:700;cursor:pointer;padding:8px 16px;text-decoration:underline}
+.btn-text:hover{color:var(--navy)}
+
+@media(max-width:640px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .intro h1{font-size:32px}
+  .step-title{font-size:24px}
+  .option{padding:16px 16px;gap:12px}
+  .option-icon{font-size:24px}
+  .option-text{font-size:14px}
+  .result-title{font-size:26px}
+}
+@media(max-width:420px){
+  .email-wrap{flex-direction:column}
+  .email-wrap button{border-left:none;border-top:2.5px solid var(--navy)}
+  .btn-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">bondi<span>pets</span></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a class="nav-link es" href="index.html#productos">Productos</a>
+      <a class="nav-link en" style="display:none" href="index.html#productos">Products</a>
+      <a class="nav-link es" href="index.html#ciencia">Ciencia</a>
+      <a class="nav-link en" style="display:none" href="index.html#ciencia">Science</a>
+      <a class="nav-link es" href="index.html#faq">FAQ</a>
+      <a class="nav-link en" style="display:none" href="index.html#faq">FAQ</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="btn-cta" href="index.html">
+      <span class="es">AVÍSAME →</span><span class="en" style="display:none">NOTIFY ME →</span>
+    </a>
+  </div>
+</nav>
+
+<div class="quiz">
+  <div class="progress" id="progress">
+    <div class="dot" id="d1"></div>
+    <div class="dot" id="d2"></div>
+    <div class="dot" id="d3"></div>
+    <div class="dot" id="d4"></div>
+    <div class="dot" id="d5"></div>
+  </div>
+
+  <!-- STEP 0: INTRO -->
+  <div class="step active" id="step0">
+    <div class="intro">
+      <h1 class="es">Descubre qué necesita tu perro</h1>
+      <h1 class="en" style="display:none">Discover what your dog needs</h1>
+      <p class="es">5 preguntas rápidas para encontrar el suplemento ideal.</p>
+      <p class="en" style="display:none">5 quick questions to find the ideal supplement.</p>
+      <button class="btn-primary" onclick="goTo(1)">
+        <span class="es">EMPEZAR →</span><span class="en" style="display:none">START →</span>
+      </button>
+      <p class="intro-hint"><span class="es">⏱ Menos de 1 minuto</span><span class="en" style="display:none">⏱ Less than 1 minute</span></p>
+    </div>
+  </div>
+
+  <!-- STEP 1: NAME -->
+  <div class="step" id="step1">
+    <h2 class="step-title es">¿Cómo se llama tu perro?</h2>
+    <h2 class="step-title en" style="display:none">What's your dog's name?</h2>
+    <p class="step-sub es">Así la recomendación será personalizada.</p>
+    <p class="step-sub en" style="display:none">So the recommendation is personalised.</p>
+    <input type="text" class="name-input" id="dog-name-input" maxlength="24" placeholder="Nombre de tu perro" oninput="onNameInput()" onkeydown="if(event.key==='Enter')submitName()">
+    <div class="step-actions">
+      <button class="btn-primary" id="name-next" disabled onclick="submitName()">
+        <span class="es">SIGUIENTE →</span><span class="en" style="display:none">NEXT →</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 2: AGE -->
+  <div class="step" id="step2">
+    <h2 class="step-title"><span class="es">¿Qué edad tiene <span class="dog-name">tu perro</span>?</span><span class="en" style="display:none">How old is <span class="dog-name">your dog</span>?</span></h2>
+    <div class="options">
+      <button class="option" onclick="pickOption(this,'age','young')">
+        <span class="option-icon">🐶</span>
+        <span class="option-text"><span class="es">Cachorro o joven (menos de 3 años)</span><span class="en" style="display:none">Puppy or young (under 3 years)</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'age','adult')">
+        <span class="option-icon">🐕</span>
+        <span class="option-text"><span class="es">Adulto (3 a 7 años)</span><span class="en" style="display:none">Adult (3 to 7 years)</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'age','senior')">
+        <span class="option-icon">🦴</span>
+        <span class="option-text"><span class="es">Senior (más de 7 años)</span><span class="en" style="display:none">Senior (over 7 years)</span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 3: SIZE -->
+  <div class="step" id="step3">
+    <h2 class="step-title"><span class="es">¿Qué tamaño tiene <span class="dog-name">tu perro</span>?</span><span class="en" style="display:none">What size is <span class="dog-name">your dog</span>?</span></h2>
+    <div class="options">
+      <button class="option" onclick="pickOption(this,'size','small')">
+        <span class="option-icon">🐾</span>
+        <span class="option-text"><span class="es">Pequeño (menos de 10 kg)</span><span class="en" style="display:none">Small (under 10 kg)</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'size','medium')">
+        <span class="option-icon">🐕</span>
+        <span class="option-text"><span class="es">Mediano (10 a 25 kg)</span><span class="en" style="display:none">Medium (10 to 25 kg)</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'size','large')">
+        <span class="option-icon">🦮</span>
+        <span class="option-text"><span class="es">Grande (más de 25 kg)</span><span class="en" style="display:none">Large (over 25 kg)</span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 4: CONCERN -->
+  <div class="step" id="step4">
+    <h2 class="step-title"><span class="es">¿Qué te preocupa más de <span class="dog-name">tu perro</span>?</span><span class="en" style="display:none">What concerns you most about <span class="dog-name">your dog</span>?</span></h2>
+    <div class="options">
+      <button class="option" onclick="pickOption(this,'concern','mobility')">
+        <span class="option-icon">🦵</span>
+        <span class="option-text"><span class="es">Movilidad y articulaciones</span><span class="en" style="display:none">Mobility and joints</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'concern','digestion')">
+        <span class="option-icon">🌿</span>
+        <span class="option-text"><span class="es">Digestión y barriga sensible</span><span class="en" style="display:none">Digestion and sensitive stomach</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'concern','energy')">
+        <span class="option-icon">⚡</span>
+        <span class="option-text"><span class="es">Energía y salud general</span><span class="en" style="display:none">Energy and overall health</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'concern','multiple')">
+        <span class="option-icon">🔄</span>
+        <span class="option-text"><span class="es">Varias cosas a la vez</span><span class="en" style="display:none">Multiple concerns</span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 5: SYMPTOM -->
+  <div class="step" id="step5">
+    <h2 class="step-title"><span class="es">¿Has notado algo en <span class="dog-name">tu perro</span>?</span><span class="en" style="display:none">Have you noticed anything in <span class="dog-name">your dog</span>?</span></h2>
+    <div class="options">
+      <button class="option" onclick="pickOption(this,'symptom','stiffness')">
+        <span class="option-icon">😣</span>
+        <span class="option-text"><span class="es">Rigidez al levantarse o caminar</span><span class="en" style="display:none">Stiffness when getting up or walking</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'symptom','soft_stools')">
+        <span class="option-icon">💩</span>
+        <span class="option-text"><span class="es">Heces blandas o digestión irregular</span><span class="en" style="display:none">Soft stools or irregular digestion</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'symptom','less_energy')">
+        <span class="option-icon">😴</span>
+        <span class="option-text"><span class="es">Menos energía de lo normal</span><span class="en" style="display:none">Less energy than usual</span></span>
+      </button>
+      <button class="option" onclick="pickOption(this,'symptom','prevent')">
+        <span class="option-icon">✅</span>
+        <span class="option-text"><span class="es">Nada especial, quiero prevenir</span><span class="en" style="display:none">Nothing specific, I want to prevent</span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="step" id="stepResult">
+    <div class="result">
+      <div class="result-badge"><span class="es">Recomendación para <span class="dog-name-up">TU PERRO</span></span><span class="en" style="display:none">Recommendation for <span class="dog-name-up">YOUR DOG</span></span></div>
+      <img class="result-img" id="result-img" src="" alt="">
+      <h2 class="result-title" id="result-title"></h2>
+      <p class="result-sub"><span class="es">La fórmula ideal para <span class="dog-name">tu perro</span></span><span class="en" style="display:none">The ideal formula for <span class="dog-name">your dog</span></span></p>
+      <div class="result-senior" id="result-senior" style="display:none">
+        <span class="es">Para perros senior con articulaciones delicadas, esta fórmula está optimizada para dar soporte diario.</span>
+        <span class="en" style="display:none">For senior dogs with delicate joints, this formula is optimised for daily support.</span>
+      </div>
+      <ul class="result-bullets" id="result-bullets"></ul>
+      <div class="result-sep"></div>
+
+      <div class="email-block">
+        <h3><span class="es">Te avisamos cuando lancemos — <span class="dog-name">tu perro</span> lo va a agradecer 🐾</span><span class="en" style="display:none">We'll notify you when we launch — <span class="dog-name">your dog</span> will thank you 🐾</span></h3>
+        <div class="email-wrap">
+          <input type="email" id="quiz-email" placeholder="tu@email.com">
+          <button onclick="submitEmail('quiz-email','quiz-success','.email-wrap button','quiz-error')">
+            <span class="es">AVÍSAME</span><span class="en" style="display:none">NOTIFY ME</span>
+          </button>
+        </div>
+        <p class="success-msg" id="quiz-success"><span class="es">✓ ¡Apuntado! Te avisamos pronto.</span><span class="en" style="display:none">✓ You're in! We'll be in touch.</span></p>
+        <p class="error-msg" id="quiz-error"><span class="es">✗ Algo falló. Vuelve a intentarlo en un momento.</span><span class="en" style="display:none">✗ Something went wrong. Please try again.</span></p>
+      </div>
+
+      <div class="result-actions">
+        <a class="btn-outline" href="index.html#productos"><span class="es">Ver todos los productos →</span><span class="en" style="display:none">See all products →</span></a>
+        <button class="btn-text" onclick="resetQuiz()"><span class="es">Volver a empezar</span><span class="en" style="display:none">Start over</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var answers={name:'',age:'',size:'',concern:'',symptom:''};
+var current=0;
+
+function setLang(l){
+  document.querySelectorAll('.es').forEach(e=>e.style.display=l==='es'?'':'none');
+  document.querySelectorAll('.en').forEach(e=>e.style.display=l==='en'?'':'none');
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(b=>{if(b.textContent===l.toUpperCase())b.classList.add('active')});
+}
+
+function updateProgress(){
+  for(var i=1;i<=5;i++){
+    var d=document.getElementById('d'+i);
+    d.classList.remove('active','done');
+    if(i<current)d.classList.add('done');
+    else if(i===current)d.classList.add('active');
+  }
+}
+
+function goTo(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  if(n===0)document.getElementById('step0').classList.add('active');
+  else if(n>=1&&n<=5)document.getElementById('step'+n).classList.add('active');
+  else document.getElementById('stepResult').classList.add('active');
+  current=n;
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(n===1)setTimeout(()=>document.getElementById('dog-name-input').focus(),400);
+}
+
+function onNameInput(){
+  var v=document.getElementById('dog-name-input').value.trim();
+  document.getElementById('name-next').disabled=v.length===0;
+}
+
+function submitName(){
+  var v=document.getElementById('dog-name-input').value.trim();
+  if(!v)return;
+  answers.name=v;
+  updateDogNameDisplay();
+  goTo(2);
+}
+
+function updateDogNameDisplay(){
+  var n=answers.name||'tu perro';
+  document.querySelectorAll('.dog-name').forEach(el=>{el.textContent=n});
+  document.querySelectorAll('.dog-name-up').forEach(el=>{el.textContent=n.toUpperCase()});
+}
+
+function pickOption(el,key,val){
+  el.parentElement.querySelectorAll('.option').forEach(o=>o.classList.remove('picked'));
+  el.classList.add('picked');
+  answers[key]=val;
+  setTimeout(function(){
+    if(key==='age')goTo(3);
+    else if(key==='size')goTo(4);
+    else if(key==='concern')goTo(5);
+    else if(key==='symptom')showResult();
+  },400);
+}
+
+var PRODUCTS={
+  condroprotector:{
+    title:'Condroprotector',
+    img:'images/doypack-condroprotector.png',
+    alt_es:'Doypack Bondi Pets Condroprotector para articulaciones',
+    alt_en:'Bondi Pets Joint Support doypack',
+    bullets_es:['Glucosamina + Condroitín + MSM','Piperina para máxima absorción (+2000%)','Probiótico Bacillus subtilis'],
+    bullets_en:['Glucosamine + Chondroitin + MSM','Piperine for maximum absorption (+2000%)','Bacillus subtilis probiotic']
+  },
+  biotics:{
+    title:'Pre+Pro+Post Biotics',
+    img:'images/doypack-biotics.png',
+    alt_es:'Doypack Bondi Pets Pre+Pro+Post Biotics para digestión',
+    alt_en:'Bondi Pets Pre+Pro+Post Biotics doypack',
+    bullets_es:['Pre + Pro + Postbióticos triple acción','Microbioma equilibrado','Enzimas digestivas'],
+    bullets_en:['Pre + Pro + Postbiotics triple action','Balanced microbiome','Digestive enzymes']
+  },
+  multivitamin:{
+    title:'Multivitamin',
+    img:'images/doypack-multivitamin.png',
+    alt_es:'Doypack Bondi Pets Multivitamin con vitaminas y minerales',
+    alt_en:'Bondi Pets Multivitamin doypack',
+    bullets_es:['Vitaminas A, B, C, D, E completas','Minerales esenciales (zinc, hierro)','Antioxidantes naturales'],
+    bullets_en:['Complete A, B, C, D, E vitamins','Essential minerals (zinc, iron)','Natural antioxidants']
+  }
+};
+
+function decide(){
+  var s=answers.symptom,c=answers.concern;
+  var p;
+  if(s==='stiffness')p='condroprotector';
+  else if(s==='soft_stools')p='biotics';
+  else if(s==='less_energy')p='multivitamin';
+  else {
+    if(c==='mobility')p='condroprotector';
+    else if(c==='digestion')p='biotics';
+    else if(c==='energy')p='multivitamin';
+    else p='condroprotector';
+  }
+  var seniorJoint=(answers.age==='senior'&&(c==='mobility'||s==='stiffness'));
+  return {product:p,seniorJoint:seniorJoint};
+}
+
+function currentLang(){
+  var active=document.querySelector('.lang-btn.active');
+  return active?active.textContent.toLowerCase():'es';
+}
+
+function showResult(){
+  var r=decide();
+  var p=PRODUCTS[r.product];
+  var lang=currentLang();
+  document.getElementById('result-title').textContent=p.title;
+  var img=document.getElementById('result-img');
+  img.src=p.img;
+  img.alt=lang==='es'?p.alt_es:p.alt_en;
+  var ul=document.getElementById('result-bullets');
+  ul.innerHTML='';
+  var bullets_es=p.bullets_es,bullets_en=p.bullets_en;
+  for(var i=0;i<bullets_es.length;i++){
+    var li=document.createElement('li');
+    var spEs=document.createElement('span');spEs.className='es';spEs.textContent=bullets_es[i];
+    var spEn=document.createElement('span');spEn.className='en';spEn.style.display=lang==='en'?'':'none';spEn.textContent=bullets_en[i];
+    if(lang==='en')spEs.style.display='none';
+    li.appendChild(spEs);li.appendChild(spEn);
+    ul.appendChild(li);
+  }
+  document.getElementById('result-senior').style.display=r.seniorJoint?'block':'none';
+  updateDogNameDisplay();
+  goTo(6);
+}
+
+function resetQuiz(){
+  answers={name:'',age:'',size:'',concern:'',symptom:''};
+  document.getElementById('dog-name-input').value='';
+  document.getElementById('name-next').disabled=true;
+  document.querySelectorAll('.option').forEach(o=>o.classList.remove('picked'));
+  document.getElementById('quiz-email').value='';
+  document.getElementById('quiz-email').disabled=false;
+  document.getElementById('quiz-success').style.display='none';
+  document.getElementById('quiz-error').style.display='none';
+  goTo(0);
+}
+
+function submitEmail(inputId,successId,btnSelector,errorId){
+  var i=document.getElementById(inputId);
+  var s=document.getElementById(successId);
+  var e=errorId?document.getElementById(errorId):null;
+  var b=document.querySelector(btnSelector);
+  if(e)e.style.display='none';
+  if(!(i.value&&i.value.includes('@'))){
+    i.style.outline='3px solid #FF2D87';setTimeout(function(){i.style.outline=''},1000);
+    return;
+  }
+  if(b)b.disabled=true;
+  var form=document.getElementById('ml-form');
+  var iframe=document.getElementById('ml-target');
+  document.getElementById('ml-email').value=i.value;
+  var settled=false;
+  var onLoad=function(){
+    if(settled)return;settled=true;
+    iframe.removeEventListener('load',onLoad);
+    i.disabled=true;s.style.display='block';
+  };
+  iframe.addEventListener('load',onLoad);
+  setTimeout(function(){
+    if(settled)return;settled=true;
+    iframe.removeEventListener('load',onLoad);
+    if(b)b.disabled=false;
+    if(e)e.style.display='block';
+  },8000);
+  form.submit();
+}
+</script>
+
+<iframe name="ml-target" id="ml-target" style="display:none" aria-hidden="true" title="MailerLite submission target"></iframe>
+<form id="ml-form" action="https://assets.mailerlite.com/jsonp/2274921/forms/185001378556413931/subscribe" method="post" target="ml-target" style="display:none" aria-hidden="true">
+  <input type="email" name="fields[email]" id="ml-email">
+  <input type="hidden" name="ml-submit" value="1">
+  <input type="hidden" name="anticsrf" value="true">
+</form>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"></script>
+</body>
+</html>
