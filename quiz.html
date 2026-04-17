@@ -32,6 +32,8 @@ nav{background:var(--white);border-bottom:2.5px solid var(--navy);padding:18px 3
 .nav-links{display:flex;gap:22px;align-items:center}
 .nav-link{font-size:13px;font-weight:700;color:var(--navy);cursor:pointer;transition:color 0.15s}
 .nav-link:hover{color:var(--fucsia)}
+.nav-quiz{font-size:13px;font-weight:900;color:var(--fucsia);cursor:pointer;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;transition:color 0.15s}
+.nav-quiz:hover{color:var(--navy)}
 .lang-toggle{display:flex;background:var(--gris-claro);border-radius:999px;padding:3px;gap:2px}
 .lang-btn{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:none;background:transparent;cursor:pointer;color:var(--navy)}
 .lang-btn.active{background:var(--white);color:var(--fucsia)}
@@ -137,13 +139,14 @@ nav{background:var(--white);border-bottom:2.5px solid var(--navy);padding:18px 3
       <a class="nav-link es" href="index.html#faq">FAQ</a>
       <a class="nav-link en" style="display:none" href="index.html#faq">FAQ</a>
     </div>
+    <a class="nav-quiz" href="index.html"><span class="es">🐾 Quiz</span><span class="en" style="display:none">🐾 Quiz</span></a>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
-    <a class="btn-cta" href="index.html">
-      <span class="es">AVÍSAME →</span><span class="en" style="display:none">NOTIFY ME →</span>
-    </a>
+    <button class="btn-cta" onclick="resetQuiz()">
+      <span class="es">HAZ EL QUIZ →</span><span class="en" style="display:none">TAKE THE QUIZ →</span>
+    </button>
   </div>
 </nav>
 
