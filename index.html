@@ -562,18 +562,23 @@ function submitEmail(inputId,successId,btnSelector,errorId){
     return;
   }
   if(b)b.disabled=true;
-  var body='fields[email]='+encodeURIComponent(i.value)+'&ml-submit=1';
-  fetch('https://assets.mailerlite.com/jsonp/2274921/forms/185001378556413931/subscribe',{
-    method:'POST',
-    mode:'no-cors',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:body
-  }).then(function(){
+  var form=document.getElementById('ml-form');
+  var iframe=document.getElementById('ml-target');
+  document.getElementById('ml-email').value=i.value;
+  var settled=false;
+  var onLoad=function(){
+    if(settled)return;settled=true;
+    iframe.removeEventListener('load',onLoad);
     i.disabled=true;s.style.display='block';animateCounter();
-  }).catch(function(){
+  };
+  iframe.addEventListener('load',onLoad);
+  setTimeout(function(){
+    if(settled)return;settled=true;
+    iframe.removeEventListener('load',onLoad);
     if(b)b.disabled=false;
     if(e)e.style.display='block';
-  });
+  },8000);
+  form.submit();
 }
 function quizNext(step,val){
   document.getElementById('qs'+step).classList.remove('active');
@@ -610,6 +615,12 @@ function toggleFaq(el){
   if(!wasOpen)item.classList.add('open');
 }
 </script>
+<iframe name="ml-target" id="ml-target" style="display:none" aria-hidden="true" title="MailerLite submission target"></iframe>
+<form id="ml-form" action="https://assets.mailerlite.com/jsonp/2274921/forms/185001378556413931/subscribe" method="post" target="ml-target" style="display:none" aria-hidden="true">
+  <input type="email" name="fields[email]" id="ml-email">
+  <input type="hidden" name="ml-submit" value="1">
+  <input type="hidden" name="anticsrf" value="true">
+</form>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"></script>
 </body>
 </html>
