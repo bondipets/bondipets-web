@@ -15,184 +15,230 @@
   --amarillo:#FFDE4D;
   --cian:#4BC7FA;
   --navy:#1A237E;
-  --naranja:#FF7A1A;
+  --cream:#FFFBF0;
   --verde:#C8F0A0;
   --white:#FFFFFF;
+  --gris:#6B7280;
+  --gris-claro:#EEF0F4;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden;font-weight:400;line-height:1.5}
+a{color:inherit;text-decoration:none}
 
-/* PROOF BAR */
-.proof-bar{background:var(--amarillo);color:var(--navy);text-align:center;padding:0.55rem 1rem;font-size:0.82rem;font-weight:700}
+/* TOP BAR */
+.topbar{background:var(--fucsia);color:var(--white);text-align:center;padding:9px 16px;font-size:13px;font-weight:400;letter-spacing:0.2px}
+.topbar strong{font-weight:900}
 
 /* NAV */
-nav{background:var(--white);border-bottom:3px solid var(--navy);display:flex;justify-content:space-between;align-items:center;padding:0.9rem 2.5rem;position:sticky;top:0;z-index:100}
-.logo{background:var(--amarillo);color:var(--fucsia);font-weight:900;font-size:1.35rem;letter-spacing:-0.5px;padding:6px 14px;cursor:pointer;text-transform:lowercase}
-.nav-links{display:flex;gap:1.8rem;align-items:center}
-.nav-link{font-size:0.9rem;font-weight:700;color:var(--navy);cursor:pointer;text-decoration:none;transition:color 0.15s}
+nav{background:var(--white);border-bottom:2.5px solid var(--navy);padding:18px 36px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-weight:900;font-size:24px;color:var(--navy);letter-spacing:-0.8px;cursor:pointer;line-height:1}
+.logo span{color:var(--fucsia)}
+.nav-right{display:flex;gap:24px;align-items:center}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-link{font-size:13px;font-weight:700;color:var(--navy);cursor:pointer;transition:color 0.15s}
 .nav-link:hover{color:var(--fucsia)}
-.lang-toggle{display:flex;border:2px solid var(--navy);padding:0;gap:0}
-.lang-btn{font-family:'Lato',sans-serif;font-size:0.75rem;font-weight:700;padding:4px 10px;border:none;background:var(--white);cursor:pointer;color:var(--navy)}
-.lang-btn.active{background:var(--navy);color:var(--amarillo)}
+.lang-toggle{display:flex;background:var(--gris-claro);border-radius:999px;padding:3px;gap:2px}
+.lang-btn{font-family:'Lato',sans-serif;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;border:none;background:transparent;cursor:pointer;color:var(--navy)}
+.lang-btn.active{background:var(--white);color:var(--fucsia)}
+.btn-cta{background:var(--fucsia);color:var(--white);font-weight:900;font-size:12px;padding:10px 18px;border-radius:999px;border:2.5px solid var(--navy);cursor:pointer;font-family:'Lato',sans-serif;letter-spacing:0.8px;box-shadow:3px 3px 0 var(--navy);transition:transform 0.1s,box-shadow 0.1s}
+.btn-cta:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--navy)}
+.btn-cta:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--navy)}
 
 /* HERO */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 115px)}
-.hero-left{background:var(--amarillo);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
-.eyebrow{display:inline-block;color:var(--fucsia);font-size:0.78rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.4rem}
-.hero-title{font-weight:900;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.05;color:var(--navy);margin-bottom:1.2rem;letter-spacing:-1.5px}
-.hero-sub{font-size:1.05rem;color:var(--navy);line-height:1.55;max-width:440px;margin-bottom:2rem;font-style:italic}
-.email-wrap{display:flex;background:var(--white);border:3px solid var(--navy);max-width:440px}
-.email-wrap input{flex:1;border:none;outline:none;padding:0.95rem 1.1rem;font-size:0.92rem;font-family:'Lato',sans-serif;background:transparent;color:var(--navy);font-weight:400}
-.email-wrap input::placeholder{color:var(--navy);opacity:0.5}
-.email-wrap button{background:var(--fucsia);color:var(--white);border:none;font-weight:900;font-family:'Lato',sans-serif;font-size:0.88rem;padding:0.95rem 1.5rem;cursor:pointer;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px;border-left:3px solid var(--navy)}
+.hero{padding:60px 40px 50px;display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1280px;margin:0 auto;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--fucsia);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--fucsia)}
+.hero-title{font-weight:900;font-size:52px;line-height:0.95;color:var(--navy);letter-spacing:-1.5px;margin-bottom:18px}
+.highlight{display:inline-block;background:var(--amarillo);padding:0 10px;border-radius:6px;transform:rotate(-1.5deg)}
+.hero-sub{font-size:15px;color:var(--gris);line-height:1.55;max-width:380px;margin-bottom:24px}
+.email-wrap{display:flex;background:var(--white);border:2.5px solid var(--navy);border-radius:12px;max-width:400px;box-shadow:4px 4px 0 var(--amarillo);overflow:hidden}
+.email-wrap input{flex:1;border:none;outline:none;padding:14px 16px;font-size:14px;font-family:'Lato',sans-serif;background:transparent;color:var(--navy);font-weight:400}
+.email-wrap input::placeholder{color:var(--gris)}
+.email-wrap button{background:var(--fucsia);color:var(--white);border:none;font-weight:900;font-family:'Lato',sans-serif;font-size:13px;padding:14px 22px;cursor:pointer;white-space:nowrap;letter-spacing:0.8px;border-left:2.5px solid var(--navy)}
 .email-wrap button:hover{background:var(--navy)}
-.launch-hint{margin-top:0.9rem;font-size:0.8rem;color:var(--navy);font-weight:700}
-.success-msg,.error-msg{display:none;margin-top:0.8rem;font-size:0.88rem;font-weight:900}
+.launch-hint{margin-top:10px;font-size:12px;color:var(--gris);font-weight:400}
+.success-msg,.error-msg{display:none;margin-top:10px;font-size:13px;font-weight:900}
 .success-msg{color:var(--navy)}
 .error-msg{color:var(--fucsia)}
-.counter-line{margin-top:1.8rem;display:flex;align-items:center;gap:10px;font-size:0.85rem;color:var(--navy);font-weight:700}
-.counter-avatars{display:flex}
-.counter-avatars div{width:32px;height:32px;border-radius:50%;border:3px solid var(--amarillo);margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:var(--white)}
-.counter-avatars div:first-child{margin-left:0}
 
-.hero-right{background:var(--cian);display:flex;align-items:center;justify-content:center;padding:3rem;position:relative}
-.product-placeholder{border:4px dashed var(--navy);padding:4rem 2rem;text-align:center;color:var(--navy);font-weight:900;font-size:1.1rem;width:100%;max-width:420px;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-transform:uppercase;letter-spacing:1px}
-.product-placeholder svg{width:80px;height:80px}
+.trust-bar{margin-top:20px;display:flex;align-items:center;gap:12px;font-size:13px;color:var(--gris);font-weight:400}
+.avatars{display:flex}
+.avatars div{width:32px;height:32px;border-radius:50%;border:2.5px solid var(--white);margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:var(--white);box-shadow:0 0 0 2px var(--navy)}
+.avatars div:first-child{margin-left:0}
+.trust-bar strong{color:var(--navy);font-weight:900}
+
+.hero-sep{height:1px;background:var(--gris-claro);margin:22px 0 18px;max-width:400px}
+.stats{display:flex;gap:32px;max-width:400px}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat-num{font-size:32px;font-weight:900;color:var(--fucsia);line-height:1;letter-spacing:-1px}
+.stat-lbl{font-size:10px;font-weight:700;color:var(--gris);text-transform:uppercase;letter-spacing:1px}
+
+/* HERO RIGHT — product stage */
+.hero-right{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.stage-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:75%;aspect-ratio:1;border-radius:50%;background:var(--cian);border:2.5px solid var(--navy)}
+.deco{position:absolute;border-radius:50%;border:2.5px solid var(--navy)}
+.deco-yellow{width:100px;height:100px;background:var(--amarillo);top:8%;right:8%;box-shadow:4px 4px 0 var(--navy)}
+.deco-fucsia{width:60px;height:60px;background:var(--fucsia);bottom:12%;left:10%;box-shadow:3px 3px 0 var(--navy)}
+.deco-navy{width:35px;height:35px;background:var(--navy);top:14%;left:16%}
+
+.doypack{position:relative;width:52%;aspect-ratio:0.68;background:var(--white);border:3px solid var(--navy);border-radius:14px 14px 32px 32px;transform:rotate(-4deg);box-shadow:6px 6px 0 var(--navy);padding:18px 14px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.dp-logo{font-weight:900;font-size:14px;color:var(--navy);letter-spacing:-0.5px}
+.dp-band{background:var(--fucsia);color:var(--white);font-weight:900;font-size:11px;text-align:center;padding:8px 6px;width:calc(100% + 28px);margin:0 -14px;letter-spacing:0.5px;line-height:1.2;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy)}
+.dp-badge{background:var(--amarillo);color:var(--navy);font-size:8px;font-weight:900;padding:4px 8px;border-radius:999px;border:1.5px solid var(--navy);letter-spacing:0.5px;text-transform:uppercase;white-space:nowrap}
+.dp-icons{display:flex;gap:8px;margin-top:4px}
+.dp-icon{width:30px;height:30px;border-radius:50%;background:var(--amarillo);border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;font-size:14px}
+.dp-meta{font-size:9px;font-weight:900;color:var(--navy);letter-spacing:0.5px;margin-top:auto}
+
+.floater{position:absolute;background:var(--white);border:2.5px solid var(--navy);border-radius:999px;padding:8px 14px;font-size:11px;font-weight:900;color:var(--navy);box-shadow:4px 4px 0 var(--navy);letter-spacing:0.5px;z-index:3;white-space:nowrap}
+.floater-top{top:18%;right:4%;transform:rotate(4deg)}
+.floater-bot{bottom:16%;left:2%;transform:rotate(-6deg);background:var(--amarillo)}
+
+/* BENEFICIOS */
+.benefits{background:var(--cream);border-top:3px solid var(--navy);padding:44px 40px}
+.benefits-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.benefit{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.benefit-icon{width:56px;height:56px;background:var(--white);border:2.5px solid var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:3px 3px 0 var(--navy)}
+.benefit h4{font-size:13px;font-weight:900;color:var(--navy);letter-spacing:-0.2px}
+.benefit p{font-size:11px;color:var(--gris);line-height:1.5;max-width:180px}
 
 /* PRODUCTS */
-.products-section{padding:5rem 2.5rem;background:var(--white)}
-.products-inner{max-width:1200px;margin:0 auto}
-.section-eyebrow{color:var(--fucsia);font-size:0.78rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.6rem;text-align:center}
-.section-title{font-weight:900;font-size:clamp(2rem,4vw,2.8rem);color:var(--navy);letter-spacing:-1px;text-align:center;margin-bottom:0.6rem;line-height:1.1}
-.section-sub{font-size:1rem;color:var(--navy);text-align:center;margin-bottom:3rem;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.pcard{padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1rem;border:3px solid var(--navy)}
-.pcard-cian{background:var(--cian)}
-.pcard-fucsia{background:var(--fucsia)}
-.pcard-fucsia *{color:var(--white)!important}
-.pcard-amarillo{background:var(--amarillo)}
-.pcard-img{background:var(--white);border:3px solid var(--navy);height:200px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:900;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;text-align:center;padding:1rem}
-.pcard-fucsia .pcard-img{color:var(--navy)}
-.pcard-img svg{width:60px;height:60px;margin-bottom:0.5rem}
-.pcard-chip{display:inline-block;background:var(--navy);color:var(--amarillo);font-size:0.7rem;font-weight:900;padding:4px 12px;text-transform:uppercase;letter-spacing:1px;align-self:flex-start}
-.pcard-fucsia .pcard-chip{background:var(--white);color:var(--fucsia)!important}
-.pcard h3{font-size:1.4rem;font-weight:900;color:var(--navy);letter-spacing:-0.5px;line-height:1.1}
-.pcard p{font-size:0.92rem;color:var(--navy);line-height:1.55}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.tag{font-size:0.7rem;font-weight:700;padding:4px 10px;background:var(--navy);color:var(--white);text-transform:uppercase;letter-spacing:0.5px}
-.pcard-fucsia .tag{background:var(--white);color:var(--fucsia)!important}
+.products{background:var(--white);padding:60px 40px}
+.products-head{text-align:center;max-width:680px;margin:0 auto 36px}
+.section-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--fucsia);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.section-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--fucsia)}
+.section-title{font-weight:900;font-size:36px;color:var(--navy);letter-spacing:-1.2px;line-height:1.05;margin-bottom:10px}
+.section-title em{color:var(--fucsia);font-style:italic;font-weight:900}
+.section-sub{font-size:15px;color:var(--gris);font-style:italic}
 
-/* WHY */
-.why-section{padding:5rem 2.5rem;background:var(--white);border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
-.why-inner{max-width:1100px;margin:0 auto}
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1rem}
-.wcard{background:var(--white);border:3px solid var(--navy);padding:2rem 1.8rem;display:flex;gap:1.2rem;align-items:flex-start}
-.wcard-icon{flex-shrink:0;width:56px;height:56px;border:3px solid var(--navy);display:flex;align-items:center;justify-content:center;background:var(--amarillo)}
-.wcard:nth-child(2) .wcard-icon{background:var(--cian)}
-.wcard:nth-child(3) .wcard-icon{background:var(--fucsia)}
-.wcard:nth-child(4) .wcard-icon{background:var(--verde)}
-.wcard-icon svg{width:30px;height:30px}
-.wcard h4{font-size:1.15rem;font-weight:900;color:var(--navy);margin-bottom:0.4rem;letter-spacing:-0.3px}
-.wcard p{font-size:0.9rem;color:var(--navy);line-height:1.5}
+.products-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pcard{position:relative;border:2.5px solid var(--navy);border-radius:22px;padding:24px 20px;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:5px 5px 0 var(--navy)}
+.pc-cian{background:var(--cian)}
+.pc-fucsia{background:var(--fucsia)}
+.pc-amarillo{background:var(--amarillo)}
+.pc-tag{position:absolute;top:14px;right:14px;background:var(--white);border:2px solid var(--navy);border-radius:999px;font-size:9px;font-weight:900;color:var(--navy);padding:5px 10px;letter-spacing:0.8px}
+.pc-mini{width:58%;aspect-ratio:0.7;background:var(--white);border:2.5px solid var(--navy);border-radius:10px 10px 22px 22px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;box-shadow:3px 3px 0 var(--navy);margin-top:6px}
+.pc-mini-logo{font-size:9px;font-weight:900;color:var(--navy);letter-spacing:-0.3px}
+.pc-mini-band{width:calc(100% + 16px);margin:0 -8px;font-size:8px;font-weight:900;color:var(--white);text-align:center;padding:5px 2px;letter-spacing:0.5px;border-top:1.5px solid var(--navy);border-bottom:1.5px solid var(--navy);line-height:1.2}
+.pc-cian .pc-mini-band{background:var(--cian);color:var(--navy)}
+.pc-fucsia .pc-mini-band{background:var(--fucsia);color:var(--white)}
+.pc-amarillo .pc-mini-band{background:var(--amarillo);color:var(--navy)}
+.pc-mini-badge{background:var(--amarillo);color:var(--navy);font-size:6.5px;font-weight:900;padding:2.5px 6px;border-radius:999px;border:1px solid var(--navy);letter-spacing:0.5px;white-space:nowrap}
+.pc-mini-meta{font-size:7px;font-weight:900;color:var(--navy);margin-top:auto;letter-spacing:0.5px}
+.pc-title{font-size:18px;font-weight:900;color:var(--navy);letter-spacing:-0.4px;text-align:center}
+.pc-desc{font-size:12px;color:var(--navy);line-height:1.5;text-align:center;max-width:220px}
+.pc-chips{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.pc-chip{font-size:9px;font-weight:900;padding:4px 9px;border-radius:999px;background:var(--white);border:2px solid var(--navy);color:var(--navy);letter-spacing:0.5px}
+.pc-btn{margin-top:6px;background:var(--navy);color:var(--white);font-family:'Lato',sans-serif;font-weight:900;font-size:11px;padding:9px 18px;border-radius:999px;border:none;cursor:pointer;letter-spacing:0.8px}
+.pc-btn:hover{background:var(--white);color:var(--navy);outline:2px solid var(--navy)}
+.pc-fucsia .pc-title,.pc-fucsia .pc-desc{color:var(--white)}
 
 /* FAQ */
-.faq-section{padding:5rem 2.5rem;background:var(--verde)}
+.faq-section{background:var(--verde);padding:60px 40px}
 .faq-inner{max-width:820px;margin:0 auto}
-.faq-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem}
-.faq-item{background:var(--white);border:3px solid var(--navy)}
-.faq-q{padding:1.3rem 1.5rem;font-weight:900;font-size:1rem;color:var(--navy);cursor:pointer;display:flex;align-items:center;gap:1.2rem;transition:background 0.15s;letter-spacing:-0.2px}
-.faq-q:hover{background:var(--amarillo)}
-.faq-num{color:var(--fucsia);font-weight:900;font-size:2.2rem;line-height:1;flex-shrink:0;letter-spacing:-2px;min-width:44px}
+.faq-section .section-title{text-align:center;margin-bottom:32px}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--white);border:2px solid var(--navy);border-radius:12px;box-shadow:3px 3px 0 var(--navy);overflow:hidden}
+.faq-q{padding:18px 20px;font-weight:900;font-size:15px;color:var(--navy);cursor:pointer;display:flex;align-items:center;gap:16px;transition:background 0.15s}
+.faq-q:hover{background:var(--cream)}
+.faq-num{color:var(--fucsia);font-weight:900;font-size:24px;line-height:1;flex-shrink:0;letter-spacing:-0.5px;min-width:36px}
 .faq-q-text{flex:1}
-.faq-arrow{font-size:1rem;color:var(--navy);transition:transform 0.2s;flex-shrink:0;font-weight:900}
-.faq-a{display:none;padding:0 1.5rem 1.3rem calc(1.5rem + 44px + 1.2rem);font-size:0.92rem;color:var(--navy);line-height:1.65}
+.faq-arrow{font-size:12px;color:var(--navy);transition:transform 0.2s;flex-shrink:0}
+.faq-a{display:none;padding:0 20px 18px calc(20px + 36px + 16px);font-size:14px;color:var(--navy);line-height:1.6}
 .faq-item.open .faq-arrow{transform:rotate(180deg)}
 .faq-item.open .faq-a{display:block}
-.faq-item.open .faq-q{background:var(--amarillo)}
 
 /* CTA */
-.cta-band{background:var(--fucsia);color:var(--white);padding:5rem 2.5rem;text-align:center;border-top:3px solid var(--navy)}
-.cta-band h2{font-weight:900;font-size:clamp(2rem,4vw,2.8rem);margin-bottom:0.6rem;letter-spacing:-1px;line-height:1.05}
-.cta-band p{font-size:1rem;opacity:1;margin-bottom:2rem;font-style:italic;max-width:520px;margin-left:auto;margin-right:auto}
-.cta-form{display:flex;max-width:440px;margin:0 auto;background:var(--white);border:3px solid var(--navy)}
-.cta-form input{flex:1;border:none;outline:none;background:transparent;padding:0.95rem 1.1rem;font-size:0.92rem;font-family:'Lato',sans-serif;color:var(--navy);font-weight:400}
-.cta-form input::placeholder{color:var(--navy);opacity:0.5}
-.cta-form button{background:var(--amarillo);color:var(--navy);border:none;font-weight:900;font-family:'Lato',sans-serif;font-size:0.88rem;padding:0.95rem 1.5rem;cursor:pointer;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px;border-left:3px solid var(--navy)}
-.cta-form button:hover{background:var(--navy);color:var(--amarillo)}
-.cta-success,.cta-error{display:none;margin-top:1rem;font-size:0.9rem;font-weight:900}
-.cta-success{color:var(--amarillo)}
-.cta-error{color:var(--amarillo)}
+.cta-band{background:var(--fucsia);color:var(--white);padding:50px 40px;text-align:center;border-top:3px solid var(--navy)}
+.cta-band h2{font-weight:900;font-size:32px;margin-bottom:10px;letter-spacing:-1px;line-height:1.05}
+.cta-band p{font-size:15px;margin-bottom:24px;font-style:italic;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-form{display:flex;max-width:420px;margin:0 auto;background:var(--white);border:2.5px solid var(--navy);border-radius:12px;box-shadow:4px 4px 0 var(--amarillo);overflow:hidden}
+.cta-form input{flex:1;border:none;outline:none;background:transparent;padding:14px 16px;font-size:14px;font-family:'Lato',sans-serif;color:var(--navy);font-weight:400}
+.cta-form input::placeholder{color:var(--gris)}
+.cta-form button{background:var(--navy);color:var(--amarillo);border:none;font-weight:900;font-family:'Lato',sans-serif;font-size:13px;padding:14px 22px;cursor:pointer;white-space:nowrap;letter-spacing:0.8px;border-left:2.5px solid var(--navy)}
+.cta-form button:hover{background:var(--amarillo);color:var(--navy)}
+.cta-success,.cta-error{display:none;margin-top:14px;font-size:13px;font-weight:900;color:var(--amarillo)}
 
 /* FOOTER */
-footer{background:var(--navy);padding:2.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{background:var(--amarillo);color:var(--fucsia);font-weight:900;font-size:1.1rem;padding:6px 12px;text-transform:lowercase}
-.footer-info{font-size:0.82rem;color:var(--white);font-weight:400}
-.footer-info a{color:var(--amarillo);text-decoration:none;font-weight:700}
+footer{background:var(--navy);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-logo{font-weight:900;font-size:18px;color:var(--white)}
+.footer-logo span{color:var(--amarillo)}
+.footer-info{font-size:13px;color:var(--white);opacity:0.85}
+.footer-info a{color:var(--amarillo);font-weight:700}
 
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left{padding:3rem 1.8rem}
-  .hero-right{padding:2.5rem 1.8rem}
-  .products-grid{grid-template-columns:1fr;gap:1.2rem}
-  .why-grid{grid-template-columns:1fr}
-  nav{padding:0.9rem 1.5rem}
-  .nav-links{gap:1rem}
-  .nav-link{display:none}
-  .products-section,.why-section,.faq-section,.cta-band{padding:3.5rem 1.5rem}
-  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .hero{grid-template-columns:1fr;padding:40px 20px;gap:40px}
+  .hero-title{font-size:40px}
+  .hero-right{max-width:360px;margin:0 auto;width:100%}
+  .benefits-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .products-grid{grid-template-columns:1fr;gap:16px}
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .benefits,.products,.faq-section,.cta-band{padding:44px 20px}
+  footer{flex-direction:column;text-align:center;padding:24px 20px}
+  .floater-top{right:-2%}
+  .floater-bot{left:-4%}
 }
 @media(max-width:480px){
-  .email-wrap,.cta-form{flex-direction:column;border:3px solid var(--navy)}
-  .email-wrap button,.cta-form button{border-left:none;border-top:3px solid var(--navy)}
-  .faq-q{gap:0.8rem}
-  .faq-num{font-size:1.8rem;min-width:34px}
-  .faq-a{padding-left:calc(1.5rem + 34px + 0.8rem)}
+  .hero-title{font-size:34px}
+  .stats{gap:20px}
+  .stat-num{font-size:26px}
+  .email-wrap,.cta-form{flex-direction:column}
+  .email-wrap button,.cta-form button{border-left:none;border-top:2.5px solid var(--navy)}
+  .benefits-grid{grid-template-columns:1fr}
+  .deco-navy{display:none}
+  .btn-cta{display:none}
+  .faq-a{padding-left:20px}
 }
 </style>
 </head>
 <body>
 
-<div class="proof-bar">
-  🐾 <span id="counter-num">143</span> <span class="es">personas ya apuntadas al lanzamiento</span><span class="en" style="display:none">people already signed up for the launch</span>
+<div class="topbar">
+  🐾 <strong id="counter-num">143</strong> <span class="es">personas ya apuntadas · Lanzamiento verano 2026 🇪🇸🇩🇪</span><span class="en" style="display:none">people signed up · Launching summer 2026 🇪🇸🇩🇪</span>
 </div>
 
 <nav>
-  <div class="logo" onclick="scrollTo(0,0)">bondi pets</div>
-  <div class="nav-links">
-    <a class="nav-link es" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Productos</a>
-    <a class="nav-link en" style="display:none" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Products</a>
-    <a class="nav-link es" onclick="document.getElementById('nosotros').scrollIntoView({behavior:'smooth'})">Nosotros</a>
-    <a class="nav-link en" style="display:none" onclick="document.getElementById('nosotros').scrollIntoView({behavior:'smooth'})">About</a>
-    <a class="nav-link es" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</a>
-    <a class="nav-link en" style="display:none" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</a>
+  <div class="logo" onclick="scrollTo(0,0)">bondi<span>pets</span></div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a class="nav-link es" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Productos</a>
+      <a class="nav-link en" style="display:none" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Products</a>
+      <a class="nav-link es" onclick="document.getElementById('ciencia').scrollIntoView({behavior:'smooth'})">Ciencia</a>
+      <a class="nav-link en" style="display:none" onclick="document.getElementById('ciencia').scrollIntoView({behavior:'smooth'})">Science</a>
+      <a class="nav-link es" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</a>
+      <a class="nav-link en" style="display:none" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</a>
+    </div>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
+    <button class="btn-cta" onclick="scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.getElementById('hero-email').focus(),500)">
+      <span class="es">AVÍSAME →</span><span class="en" style="display:none">NOTIFY ME →</span>
+    </button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
+  <div>
     <div class="eyebrow">
       <span class="es">LANZAMIENTO VERANO 2026</span>
       <span class="en" style="display:none">LAUNCHING SUMMER 2026</span>
     </div>
     <h1 class="hero-title">
-      <span class="es">Suplementos para perros que funcionan</span>
-      <span class="en" style="display:none">Supplements for dogs that actually work</span>
+      <span class="es">Suplementos<br>para perros<br><span class="highlight">que funcionan.</span></span>
+      <span class="en" style="display:none">Supplements<br>for dogs<br><span class="highlight">that work.</span></span>
     </h1>
-    <p class="hero-sub es">Fórmulas premium con ingredientes respaldados por la ciencia, en el formato de soft chew que tu perro va a querer cada día.</p>
-    <p class="hero-sub en" style="display:none">Premium formulas with science-backed ingredients, in a soft chew format your dog will love every single day.</p>
+    <p class="hero-sub es">Fórmulas premium con ingredientes respaldados por la ciencia, en soft chews que tu perro va a querer cada día.</p>
+    <p class="hero-sub en" style="display:none">Premium formulas with science-backed ingredients, in soft chews your dog will want every single day.</p>
     <div class="email-wrap">
       <input type="email" id="hero-email" placeholder="tu@email.com">
       <button onclick="submitEmail('hero-email','hero-success','.email-wrap button','hero-error')">
-        <span class="es">Avísame</span><span class="en" style="display:none">Notify me</span>
+        <span class="es">AVÍSAME</span><span class="en" style="display:none">NOTIFY ME</span>
       </button>
     </div>
-    <p class="launch-hint es">Sin spam. Solo te avisamos cuando lancemos en Amazon.es y Amazon.de</p>
-    <p class="launch-hint en" style="display:none">No spam. We'll only notify you when we launch on Amazon.es and Amazon.de</p>
+    <p class="launch-hint es">Sin spam. Solo te avisamos cuando lancemos en Amazon.es y Amazon.de.</p>
+    <p class="launch-hint en" style="display:none">No spam. We'll only notify you when we launch on Amazon.es and Amazon.de.</p>
     <p class="success-msg" id="hero-success">
       <span class="es">✓ ¡Apuntado! Te avisamos pronto.</span>
       <span class="en" style="display:none">✓ You're in! We'll be in touch.</span>
@@ -201,181 +247,171 @@ footer{background:var(--navy);padding:2.5rem 2.5rem;display:flex;justify-content
       <span class="es">✗ Algo falló. Vuelve a intentarlo en un momento.</span>
       <span class="en" style="display:none">✗ Something went wrong. Please try again.</span>
     </p>
-    <div class="counter-line">
-      <div class="counter-avatars">
-        <div style="background:#FF2D87">A</div>
-        <div style="background:#4BC7FA">M</div>
-        <div style="background:#FF7A1A">J</div>
+
+    <div class="trust-bar">
+      <div class="avatars">
+        <div style="background:#4BC7FA">A</div>
+        <div style="background:#FF2D87">M</div>
+        <div style="background:#FFDE4D;color:#1A237E">J</div>
         <div style="background:#1A237E">R</div>
       </div>
       <span class="es"><strong id="counter-num2">143</strong> personas ya apuntadas</span>
       <span class="en" style="display:none"><strong id="counter-num3">143</strong> people signed up</span>
     </div>
+
+    <div class="hero-sep"></div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">18</div>
+        <div class="stat-lbl es">Activos por fórmula</div>
+        <div class="stat-lbl en" style="display:none">Actives per formula</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3x</div>
+        <div class="stat-lbl es">Más que competencia</div>
+        <div class="stat-lbl en" style="display:none">More vs competition</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl es">Rellenos</div>
+        <div class="stat-lbl en" style="display:none">Fillers</div>
+      </div>
+    </div>
   </div>
+
   <div class="hero-right">
-    <div class="product-placeholder">
-      <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="12" y="18" width="56" height="72" stroke="#1A237E" stroke-width="4" fill="none"/>
-        <path d="M12 18 L40 8 L68 18" stroke="#1A237E" stroke-width="4" fill="none" stroke-linejoin="round"/>
-        <line x1="22" y1="42" x2="58" y2="42" stroke="#1A237E" stroke-width="3"/>
-        <line x1="22" y1="54" x2="58" y2="54" stroke="#1A237E" stroke-width="3"/>
-        <line x1="22" y1="66" x2="48" y2="66" stroke="#1A237E" stroke-width="3"/>
-      </svg>
-      <span class="es">Imagen del producto aquí</span>
-      <span class="en" style="display:none">Product image here</span>
+    <div class="stage-circle"></div>
+    <div class="deco deco-yellow"></div>
+    <div class="deco deco-fucsia"></div>
+    <div class="deco deco-navy"></div>
+
+    <div class="doypack">
+      <div class="dp-logo">bondi pets</div>
+      <div class="dp-badge">VETERINARIAN RECOMMENDED</div>
+      <div class="dp-band">HIP &amp; JOINTS<br>+PROBIOTICS</div>
+      <div class="dp-icons">
+        <div class="dp-icon">🦴</div>
+        <div class="dp-icon">💪</div>
+        <div class="dp-icon">🌿</div>
+      </div>
+      <div class="dp-meta">120 CHEWS · 300g</div>
+    </div>
+
+    <div class="floater floater-top">🌿 SIN RELLENOS</div>
+    <div class="floater floater-bot">⭐ 18 ACTIVOS</div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="benefits" id="ciencia">
+  <div class="benefits-grid">
+    <div class="benefit">
+      <div class="benefit-icon">🔬</div>
+      <h4 class="es">Ciencia real</h4>
+      <h4 class="en" style="display:none">Real science</h4>
+      <p class="es">Cada activo con evidencia clínica.</p>
+      <p class="en" style="display:none">Every active with clinical evidence.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">✨</div>
+      <h4 class="es">Fórmula completa</h4>
+      <h4 class="en" style="display:none">Complete formula</h4>
+      <p class="es">18 activos, no 5 como el resto.</p>
+      <p class="en" style="display:none">18 actives, not 5 like the rest.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">😋</div>
+      <h4 class="es">Les encanta</h4>
+      <h4 class="en" style="display:none">Dogs love it</h4>
+      <p class="es">Soft chew irresistible.</p>
+      <p class="en" style="display:none">Irresistible soft chew.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🛡️</div>
+      <h4 class="es">Transparencia total</h4>
+      <h4 class="en" style="display:none">Full transparency</h4>
+      <p class="es">Dosis reales, etiquetas claras.</p>
+      <p class="en" style="display:none">Real doses, clear labels.</p>
     </div>
   </div>
 </section>
 
 <!-- PRODUCTS -->
-<section class="products-section" id="productos">
-  <div class="products-inner">
-    <p class="section-eyebrow es">Nuestros productos</p>
-    <p class="section-eyebrow en" style="display:none">Our products</p>
-    <h2 class="section-title es">Tres fórmulas, cero rellenos</h2>
-    <h2 class="section-title en" style="display:none">Three formulas, zero fillers</h2>
-    <p class="section-sub es">Pensadas para que tu perro viva más feliz y más sano, cada día.</p>
-    <p class="section-sub en" style="display:none">Designed for a happier, healthier dog — every single day.</p>
-    <div class="products-grid">
-      <div class="pcard pcard-cian">
-        <div class="pcard-img">
-          <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="12" y="18" width="56" height="72" stroke="#1A237E" stroke-width="4" fill="none"/>
-            <path d="M12 18 L40 8 L68 18" stroke="#1A237E" stroke-width="4" fill="none" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <span class="pcard-chip"><span class="es">Articulaciones</span><span class="en" style="display:none">Joints</span></span>
-        <h3 class="es">Condroprotector</h3>
-        <h3 class="en" style="display:none">Joint Support</h3>
-        <p class="es">18 activos: glucosamina, condroitín, MSM, colágeno tipo II, piperina y probiótico. La fórmula más completa del mercado.</p>
-        <p class="en" style="display:none">18 actives: glucosamine, chondroitin, MSM, type II collagen, piperine and probiotic. The most complete formula on the market.</p>
-        <div class="tags">
-          <span class="tag">Piperina</span>
-          <span class="tag">Boswellia</span>
-          <span class="tag">120 chews</span>
-        </div>
-      </div>
-      <div class="pcard pcard-fucsia">
-        <div class="pcard-img">
-          <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="12" y="18" width="56" height="72" stroke="#1A237E" stroke-width="4" fill="none"/>
-            <path d="M12 18 L40 8 L68 18" stroke="#1A237E" stroke-width="4" fill="none" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <span class="pcard-chip"><span class="es">Digestión</span><span class="en" style="display:none">Digestion</span></span>
-        <h3 class="es">Biotics</h3>
-        <h3 class="en" style="display:none">Biotics</h3>
-        <p class="es">Pre + Pro + Postbióticos en triple acción. Microbioma equilibrado y digestión perfecta en un solo chew diario.</p>
-        <p class="en" style="display:none">Pre + Pro + Postbiotics in triple action. Balanced microbiome and perfect digestion in a single daily chew.</p>
-        <div class="tags">
-          <span class="tag">Triple acción</span>
-          <span class="tag">Microbioma</span>
-          <span class="tag">Soft chew</span>
-        </div>
-      </div>
-      <div class="pcard pcard-amarillo">
-        <div class="pcard-img">
-          <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="12" y="18" width="56" height="72" stroke="#1A237E" stroke-width="4" fill="none"/>
-            <path d="M12 18 L40 8 L68 18" stroke="#1A237E" stroke-width="4" fill="none" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <span class="pcard-chip"><span class="es">Vitalidad</span><span class="en" style="display:none">Vitality</span></span>
-        <h3 class="es">Multivitamin</h3>
-        <h3 class="en" style="display:none">Multivitamin</h3>
-        <p class="es">Vitaminas, minerales y antioxidantes esenciales para la vitalidad diaria de la cabeza a la cola.</p>
-        <p class="en" style="display:none">Essential vitamins, minerals and antioxidants for daily vitality from head to tail.</p>
-        <div class="tags">
-          <span class="tag">Uso diario</span>
-          <span class="tag">Antioxidantes</span>
-          <span class="tag">Completo</span>
-        </div>
-      </div>
-    </div>
+<section class="products" id="productos">
+  <div class="products-head">
+    <div class="section-eyebrow es">NUESTROS PRODUCTOS</div>
+    <div class="section-eyebrow en" style="display:none">OUR PRODUCTS</div>
+    <h2 class="section-title es">Tres fórmulas, <em>tres momentos.</em></h2>
+    <h2 class="section-title en" style="display:none">Three formulas, <em>three moments.</em></h2>
+    <p class="section-sub es">Elige la que más necesita tu perro.</p>
+    <p class="section-sub en" style="display:none">Choose the one your dog needs most.</p>
   </div>
-</section>
+  <div class="products-grid">
 
-<!-- WHY -->
-<section class="why-section" id="nosotros">
-  <div class="why-inner">
-    <p class="section-eyebrow es">Por qué Bondi Pets</p>
-    <p class="section-eyebrow en" style="display:none">Why Bondi Pets</p>
-    <h2 class="section-title es">Formulado con ciencia, hecho con amor</h2>
-    <h2 class="section-title en" style="display:none">Formulated with science, made with love</h2>
-    <p class="section-sub es">Cuatro motivos por los que tu perro va a notar la diferencia.</p>
-    <p class="section-sub en" style="display:none">Four reasons your dog will feel the difference.</p>
-    <div class="why-grid">
-      <div class="wcard">
-        <div class="wcard-icon">
-          <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11 3 V10 L5 24 A2 2 0 0 0 7 27 H23 A2 2 0 0 0 25 24 L19 10 V3" stroke="#1A237E" stroke-width="2.4" stroke-linejoin="round" fill="none"/>
-            <line x1="9" y1="3" x2="21" y2="3" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="13" cy="19" r="1.3" fill="#1A237E"/>
-            <circle cx="17" cy="22" r="1" fill="#1A237E"/>
-          </svg>
-        </div>
-        <div>
-          <h4 class="es">Ciencia real</h4>
-          <h4 class="en" style="display:none">Real science</h4>
-          <p class="es">Cada ingrediente tiene evidencia clínica. No marketing, no rellenos. Solo lo que funciona.</p>
-          <p class="en" style="display:none">Every ingredient has clinical evidence. No marketing, no fillers. Only what works.</p>
-        </div>
+    <div class="pcard pc-cian">
+      <span class="pc-tag"><span class="es">ARTICULACIONES</span><span class="en" style="display:none">JOINTS</span></span>
+      <div class="pc-mini">
+        <div class="pc-mini-logo">bondi pets</div>
+        <div class="pc-mini-badge">VET REC</div>
+        <div class="pc-mini-band">HIP &amp; JOINTS</div>
+        <div class="pc-mini-meta">120 · 300g</div>
       </div>
-      <div class="wcard">
-        <div class="wcard-icon">
-          <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="5" y="4" width="20" height="23" stroke="#1A237E" stroke-width="2.4" fill="none"/>
-            <line x1="9" y1="11" x2="11" y2="13" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round"/>
-            <line x1="11" y1="13" x2="14" y2="10" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round"/>
-            <line x1="16" y1="11" x2="22" y2="11" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round"/>
-            <line x1="9" y1="18" x2="11" y2="20" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round"/>
-            <line x1="11" y1="20" x2="14" y2="17" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round"/>
-            <line x1="16" y1="18" x2="22" y2="18" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div>
-          <h4 class="es">Fórmula completa</h4>
-          <h4 class="en" style="display:none">Complete formula</h4>
-          <p class="es">Más activos que cualquier competidor en Amazon.es. Hasta 18 ingredientes por fórmula.</p>
-          <p class="en" style="display:none">More actives than any competitor on Amazon.es. Up to 18 ingredients per formula.</p>
-        </div>
+      <div class="pc-title es">Condroprotector</div>
+      <div class="pc-title en" style="display:none">Joint Support</div>
+      <p class="pc-desc es">18 activos para movilidad real: glucosamina, colágeno, piperina y probiótico.</p>
+      <p class="pc-desc en" style="display:none">18 actives for real mobility: glucosamine, collagen, piperine and probiotic.</p>
+      <div class="pc-chips">
+        <span class="pc-chip">PIPERINA</span>
+        <span class="pc-chip">BOSWELLIA</span>
       </div>
-      <div class="wcard">
-        <div class="wcard-icon">
-          <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 25 C15 25 5 18 5 11 A5 5 0 0 1 15 9 A5 5 0 0 1 25 11 C25 18 15 25 15 25 Z" stroke="#1A237E" stroke-width="2.4" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </div>
-        <div>
-          <h4 class="es">Les encanta</h4>
-          <h4 class="en" style="display:none">Dogs love it</h4>
-          <p class="es">Soft chew irresistible. Sin pastillas ni batallas diarias para dárselo. Se lo comen solos.</p>
-          <p class="en" style="display:none">Irresistible soft chew. No pills, no daily battles. They eat it on their own.</p>
-        </div>
-      </div>
-      <div class="wcard">
-        <div class="wcard-icon">
-          <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 4 L25 8 V15 C25 21 20 25 15 27 C10 25 5 21 5 15 V8 L15 4 Z" stroke="#1A237E" stroke-width="2.4" stroke-linejoin="round" fill="none"/>
-            <path d="M11 15 L14 18 L19 12" stroke="#1A237E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div>
-          <h4 class="es">Transparencia total</h4>
-          <h4 class="en" style="display:none">Full transparency</h4>
-          <p class="es">Ingredientes claros, dosis reales. Sabemos exactamente lo que ponemos y por qué.</p>
-          <p class="en" style="display:none">Clear ingredients, real doses. We know exactly what we put in and why.</p>
-        </div>
-      </div>
+      <button class="pc-btn"><span class="es">VER DETALLES →</span><span class="en" style="display:none">SEE DETAILS →</span></button>
     </div>
+
+    <div class="pcard pc-fucsia">
+      <span class="pc-tag"><span class="es">DIGESTIÓN</span><span class="en" style="display:none">DIGESTION</span></span>
+      <div class="pc-mini">
+        <div class="pc-mini-logo">bondi pets</div>
+        <div class="pc-mini-badge">VET REC</div>
+        <div class="pc-mini-band">BIOTICS</div>
+        <div class="pc-mini-meta">120 · 300g</div>
+      </div>
+      <div class="pc-title es">Pre+Pro+Post</div>
+      <div class="pc-title en" style="display:none">Pre+Pro+Post</div>
+      <p class="pc-desc es">Triple acción para un microbioma equilibrado en un solo chew diario.</p>
+      <p class="pc-desc en" style="display:none">Triple action for a balanced microbiome in one daily chew.</p>
+      <div class="pc-chips">
+        <span class="pc-chip">MICROBIOMA</span>
+        <span class="pc-chip">ENZIMAS</span>
+      </div>
+      <button class="pc-btn"><span class="es">VER DETALLES →</span><span class="en" style="display:none">SEE DETAILS →</span></button>
+    </div>
+
+    <div class="pcard pc-amarillo">
+      <span class="pc-tag"><span class="es">VITALIDAD</span><span class="en" style="display:none">VITALITY</span></span>
+      <div class="pc-mini">
+        <div class="pc-mini-logo">bondi pets</div>
+        <div class="pc-mini-badge">VET REC</div>
+        <div class="pc-mini-band">MULTIVIT</div>
+        <div class="pc-mini-meta">120 · 300g</div>
+      </div>
+      <div class="pc-title es">Multivitamin</div>
+      <div class="pc-title en" style="display:none">Multivitamin</div>
+      <p class="pc-desc es">Vitaminas, minerales y antioxidantes para la vitalidad diaria, de la cabeza a la cola.</p>
+      <p class="pc-desc en" style="display:none">Vitamins, minerals and antioxidants for daily vitality, head to tail.</p>
+      <div class="pc-chips">
+        <span class="pc-chip">VIT A-E</span>
+        <span class="pc-chip">ZINC</span>
+      </div>
+      <button class="pc-btn"><span class="es">VER DETALLES →</span><span class="en" style="display:none">SEE DETAILS →</span></button>
+    </div>
+
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="faq-inner">
-    <p class="section-eyebrow es">Preguntas frecuentes</p>
-    <p class="section-eyebrow en" style="display:none">FAQ</p>
     <h2 class="section-title es">Todo lo que necesitas saber</h2>
     <h2 class="section-title en" style="display:none">Everything you need to know</h2>
     <div class="faq-list">
@@ -431,14 +467,14 @@ footer{background:var(--navy);padding:2.5rem 2.5rem;display:flex;justify-content
   <p class="en" style="display:none">Launching on Amazon Spain and Germany in summer 2026. Early sign-ups get a launch discount.</p>
   <div class="cta-form">
     <input type="email" id="cta-email" placeholder="tu@email.com">
-    <button onclick="submitEmail('cta-email','cta-success','.cta-form button','cta-error')"><span class="es">Avísame</span><span class="en" style="display:none">Notify me</span></button>
+    <button onclick="submitEmail('cta-email','cta-success','.cta-form button','cta-error')"><span class="es">AVÍSAME</span><span class="en" style="display:none">NOTIFY ME</span></button>
   </div>
   <p class="cta-success" id="cta-success"><span class="es">✓ ¡Genial! Te avisamos pronto.</span><span class="en" style="display:none">✓ Great! We'll be in touch.</span></p>
   <p class="cta-error" id="cta-error"><span class="es">✗ Algo falló. Vuelve a intentarlo en un momento.</span><span class="en" style="display:none">✗ Something went wrong. Please try again.</span></p>
 </div>
 
 <footer>
-  <div class="footer-logo">bondi pets</div>
+  <div class="footer-logo">bondi<span>pets</span></div>
   <div class="footer-info">© 2026 Bondi Pets SL · Barcelona · <a href="mailto:hola@bondipets.eu">hola@bondipets.eu</a> · bondipets.eu</div>
 </footer>
 
