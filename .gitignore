@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Vercel
+.vercel
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Internal (do not publish)
+BITACORA.md
+skills/
