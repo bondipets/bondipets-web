@@ -13,3 +13,8 @@ node_modules/
 # Internal (do not publish)
 BITACORA.md
 skills/
+
+# Secrets
+.env
+.env.local
+.env.*.local

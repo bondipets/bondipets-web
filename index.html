@@ -57,8 +57,8 @@
         <span class="es">AVÍSAME</span><span class="en" style="display:none">NOTIFY ME</span>
       </button>
     </div>
-    <p class="launch-hint es">Sin spam. Solo te avisamos cuando lancemos en Amazon.es y Amazon.de.</p>
-    <p class="launch-hint en" style="display:none">No spam. We'll only notify you when we launch on Amazon.es and Amazon.de.</p>
+    <p class="form-disclaimer es">Te avisaremos en exclusiva 48h antes del lanzamiento. Sin spam.</p>
+    <p class="form-disclaimer en" style="display:none">Exclusive notice 48h before launch. No spam.</p>
     <a class="hero-quiz-link es" href="quiz.html">¿No sabes cuál elegir? Haz el quiz →</a>
     <a class="hero-quiz-link en" style="display:none" href="quiz.html">Not sure which one? Take the quiz →</a>
     <p class="success-msg" id="hero-success">
@@ -86,18 +86,18 @@
     <div class="stats">
       <div class="stat">
         <div class="stat-num">18</div>
-        <div class="stat-lbl es">Activos por fórmula</div>
-        <div class="stat-lbl en" style="display:none">Actives per formula</div>
+        <div class="stat-lbl es">ingredientes activos<br><span class="stat-sub">(vs 6-8 del estándar)</span></div>
+        <div class="stat-lbl en" style="display:none">active ingredients<br><span class="stat-sub">(vs 6-8 standard)</span></div>
       </div>
       <div class="stat">
         <div class="stat-num">3x</div>
-        <div class="stat-lbl es">Más que competencia</div>
-        <div class="stat-lbl en" style="display:none">More vs competition</div>
+        <div class="stat-lbl es">más activos que<br><span class="stat-sub">suplementos típicos</span></div>
+        <div class="stat-lbl en" style="display:none">more actives than<br><span class="stat-sub">typical supplements</span></div>
       </div>
       <div class="stat">
         <div class="stat-num">0</div>
-        <div class="stat-lbl es">Rellenos</div>
-        <div class="stat-lbl en" style="display:none">Fillers</div>
+        <div class="stat-lbl es">rellenos artificiales<br><span class="stat-sub">ni excipientes inútiles</span></div>
+        <div class="stat-lbl en" style="display:none">artificial fillers<br><span class="stat-sub">no useless excipients</span></div>
       </div>
     </div>
   </div>
@@ -108,22 +108,6 @@
     </div>
     <div class="floater floater-top">⭐ 18 ACTIVOS</div>
     <div class="floater floater-bot">🌿 SIN RELLENOS</div>
-  </div>
-</section>
-
-<!-- EXPLODED VIEW (scroll-driven) -->
-<section class="exploded-wrapper" id="exploded-view">
-  <div class="exploded-sticky">
-    <div class="exploded-chew" id="exploded-chew">
-      <img id="exploded-chew-img" src="" alt="" style="display:none">
-      <span class="exploded-chew-placeholder">CHEW</span>
-    </div>
-    <div class="exploded-label exploded-label-1" data-label-index="0">Glucosamina</div>
-    <div class="exploded-label exploded-label-2" data-label-index="1">Condroitina</div>
-    <div class="exploded-label exploded-label-3" data-label-index="2">MSM</div>
-    <div class="exploded-label exploded-label-4" data-label-index="3">Cúrcuma + Piperina</div>
-    <div class="exploded-label exploded-label-5" data-label-index="4">Mejillón Verde</div>
-    <div class="exploded-label exploded-label-6" data-label-index="5">Probiótico</div>
   </div>
 </section>
 
@@ -161,26 +145,36 @@
   </div>
 </section>
 
-<!-- LIFESTYLE -->
-<section class="lifestyle">
-  <div class="lifestyle-head">
-    <div class="lifestyle-eyebrow es">PARA PERROS QUE QUIEREN MÁS</div>
-    <div class="lifestyle-eyebrow en" style="display:none">FOR DOGS WHO WANT MORE</div>
-    <h2 class="lifestyle-title es">Más energía, más vida, más momentos juntos.</h2>
-    <h2 class="lifestyle-title en" style="display:none">More energy, more life, more moments together.</h2>
-  </div>
-  <div class="lifestyle-grid">
-    <div class="lifestyle-card">
-      <img src="images/lifestyle-bulldog-happy.webp" alt="Bulldog francés sonriente con soft chews Bondi Pets en una alfombra cream" loading="lazy" width="600" height="340">
-      <div class="lifestyle-caption"><span class="es">Les encanta 🐾</span><span class="en" style="display:none">They love it 🐾</span></div>
+<!-- VIDEO SHOWCASE -->
+<section class="video-showcase">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="es">Cada chew. Cada ingrediente.</h2>
+      <h2 class="en" style="display:none">Every chew. Every ingredient.</h2>
+      <p class="es">Mira lo que hay dentro de cada Bondi Pets.</p>
+      <p class="en" style="display:none">See what's inside every Bondi Pets.</p>
     </div>
-    <div class="lifestyle-card">
-      <img src="images/lifestyle-border-collie-running.webp" alt="Border collie corriendo feliz por un prado soleado al atardecer" loading="lazy" width="600" height="340">
-      <div class="lifestyle-caption"><span class="es">Más energía 💪</span><span class="en" style="display:none">More energy 💪</span></div>
+    <div class="video-container">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="videos/exploded-hero-poster.jpg"
+        aria-label="Vídeo del chew Bondi Pets revelando sus ingredientes naturales"
+      >
+        <source src="videos/exploded-hero-web.mp4" type="video/mp4">
+        <source src="videos/exploded-hero.mp4" type="video/mp4">
+        Tu navegador no soporta vídeo HTML5.
+      </video>
     </div>
-    <div class="lifestyle-card">
-      <img src="images/lifestyle-chews-closeup.webp" alt="Detalle de tres soft chews marrones Bondi Pets en la palma de una mano" loading="lazy" width="600" height="340">
-      <div class="lifestyle-caption"><span class="es">Soft chews de verdad ✨</span><span class="en" style="display:none">Real soft chews ✨</span></div>
+    <div class="ingredients-badges-row">
+      <span class="badge">Glucosamina</span>
+      <span class="badge">Probiótico</span>
+      <span class="badge">Condroitina</span>
+      <span class="badge">Mejillón Verde</span>
+      <span class="badge">MSM</span>
+      <span class="badge">Cúrcuma + Piperina</span>
     </div>
   </div>
 </section>
@@ -198,10 +192,10 @@
   <div class="products-grid">
 
     <div class="pcard pc-cian">
-      <span class="pc-tag"><span class="es">ARTICULACIONES</span><span class="en" style="display:none">JOINTS</span></span>
       <div class="pc-img-wrap">
         <img src="images/doypack-condroprotector.webp" alt="Doypack Bondi Pets Condroprotector para articulaciones con 18 activos" loading="lazy" width="220" height="290">
       </div>
+      <h3 class="pc-problem"><span class="es">ARTICULACIONES</span><span class="en" style="display:none">JOINTS</span></h3>
       <div class="pc-title es">Condroprotector</div>
       <div class="pc-title en" style="display:none">Joint Support</div>
       <p class="pc-desc es">18 activos para movilidad real: glucosamina, colágeno, piperina y probiótico.</p>
@@ -214,10 +208,10 @@
     </div>
 
     <div class="pcard pc-fucsia">
-      <span class="pc-tag"><span class="es">DIGESTIÓN</span><span class="en" style="display:none">DIGESTION</span></span>
       <div class="pc-img-wrap">
         <img src="images/doypack-biotics.webp" alt="Doypack Bondi Pets Pre+Pro+Post Biotics para digestión y microbioma" loading="lazy" width="220" height="290">
       </div>
+      <h3 class="pc-problem"><span class="es">DIGESTIÓN</span><span class="en" style="display:none">DIGESTION</span></h3>
       <div class="pc-title es">Pre+Pro+Post</div>
       <div class="pc-title en" style="display:none">Pre+Pro+Post</div>
       <p class="pc-desc es">Triple acción para un microbioma equilibrado en un solo chew diario.</p>
@@ -230,10 +224,10 @@
     </div>
 
     <div class="pcard pc-amarillo">
-      <span class="pc-tag"><span class="es">VITALIDAD</span><span class="en" style="display:none">VITALITY</span></span>
       <div class="pc-img-wrap">
         <img src="images/doypack-multivitamin.webp" alt="Doypack Bondi Pets Multivitamin con vitaminas minerales y antioxidantes" loading="lazy" width="220" height="290">
       </div>
+      <h3 class="pc-problem"><span class="es">VITALIDAD</span><span class="en" style="display:none">VITALITY</span></h3>
       <div class="pc-title es">Multivitamin</div>
       <div class="pc-title en" style="display:none">Multivitamin</div>
       <p class="pc-desc es">Vitaminas, minerales y antioxidantes para la vitalidad diaria, de la cabeza a la cola.</p>
@@ -329,10 +323,6 @@
   <input type="hidden" name="ml-submit" value="1">
   <input type="hidden" name="anticsrf" value="true">
 </form>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
-<script src="js/exploded.js"></script>
 <script src="js/main.js"></script>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"></script>
 </body>
