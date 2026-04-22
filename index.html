@@ -3,329 +3,454 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bondi Pets — Coming Soon</title>
-<meta name="description" content="Suplementos premium para perros respaldados por la ciencia. Lanzamos en Amazon España y Alemania en verano 2026.">
+<title>Bondi Pets — Suplementos para perros que funcionan.</title>
+<meta name="description" content="Suplementos premium para perros respaldados por la ciencia. 18 activos por chew, piperina para absorción real, probiótico integrado. Lanzamos en Amazon España y Alemania verano 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700;1,9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,700;1,9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<div class="topbar">
-  🐾 <strong id="counter-num">143</strong> <span class="es">personas ya apuntadas · Lanzamiento verano 2026 🇪🇸🇩🇪</span><span class="en" style="display:none">people signed up · Launching summer 2026 🇪🇸🇩🇪</span>
+<!-- SVG symbol sprite (definido una vez, referenciado con <use> en nav y footer) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bondi-logo" viewBox="0 0 3000 1834">
+    <g transform="translate(0,1834) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+      <path d="M10755 10766 c-147 -28 -313 -96 -430 -176 -54 -37 -125 -114 -161 -175 -26 -44 -29 -59 -29 -130 0 -80 0 -80 64 -185 78 -129 106 -189 120 -258 7 -35 11 -331 11 -884 0 -837 1 -851 35 -934 21 -49 76 -105 122 -126 96 -42 252 -32 349 23 63 35 106 77 202 192 45 53 80 87 92 87 14 0 31 -22 60 -79 48 -91 128 -179 195 -211 68 -33 178 -46 270 -33 269 39 455 293 522 713 21 130 21 486 0 595 -51 274 -151 449 -307 538 -62 35 -182 67 -254 67 -134 0 -284 -71 -366 -174 -75 -93 -78 -96 -95 -90 -13 5 -15 73 -15 562 0 555 0 555 -25 598 -35 60 -90 84 -202 89 -51 3 -118 -1 -158 -9z m558 -1557 c47 -22 65 -74 79 -227 20 -234 -15 -421 -87 -468 -31 -20 -110 -23 -143 -5 -22 12 -22 16 -22 264 0 267 10 345 47 396 35 46 80 61 126 40z"/>
+      <path d="M18225 10770 c-131 -24 -315 -102 -417 -178 -79 -58 -152 -141 -187 -210 -54 -107 -42 -192 47 -325 15 -23 43 -71 62 -106 31 -60 34 -75 43 -206 14 -202 -7 -271 -57 -183 -63 111 -128 172 -211 196 -149 43 -199 43 -345 -5 -98 -32 -217 -130 -281 -233 -119 -191 -164 -380 -163 -690 0 -365 56 -591 187 -765 114 -151 278 -215 481 -187 183 24 317 125 401 300 19 39 40 72 47 72 7 0 19 -15 26 -32 38 -95 87 -184 123 -223 75 -81 201 -125 359 -125 213 1 393 109 478 288 31 65 37 88 40 165 6 117 -10 187 -51 231 -28 28 -41 34 -97 40 -72 8 -94 17 -106 43 -5 10 -11 461 -14 1003 -5 985 -5 985 -30 1030 -16 27 -43 55 -72 73 -40 25 -59 30 -130 33 -46 1 -105 -1 -133 -6z m-502 -1592 c15 -18 32 -48 37 -68 14 -51 24 -491 11 -510 -7 -11 -30 -15 -82 -15 -70 0 -72 1 -103 37 -47 54 -61 119 -60 283 2 177 15 244 57 286 27 27 36 30 71 26 30 -4 48 -14 69 -39z"/>
+      <path d="M19385 10730 c-177 -20 -302 -99 -372 -232 -26 -50 -28 -61 -28 -178 0 -114 2 -130 26 -180 47 -100 139 -175 259 -209 25 -7 58 -17 74 -22 16 -5 87 -9 158 -9 143 0 244 20 333 67 66 34 91 57 135 125 46 71 64 151 57 255 -8 125 -30 177 -107 253 -66 65 -116 92 -225 119 -59 14 -229 21 -310 11z"/>
+      <path d="M13075 9765 c-141 -27 -194 -44 -292 -92 -336 -165 -491 -553 -423 -1057 32 -240 147 -442 327 -573 85 -62 154 -95 264 -127 93 -27 348 -59 407 -51 21 2 84 10 142 16 394 44 666 288 740 664 6 33 16 79 21 102 5 23 9 103 9 179 0 304 -86 552 -249 715 -100 100 -256 183 -396 210 -241 47 -363 50 -550 14z m285 -542 c42 -29 59 -55 79 -123 34 -113 43 -199 40 -350 -4 -132 -7 -150 -31 -202 -37 -81 -93 -107 -157 -73 -34 17 -77 66 -86 97 -3 13 -10 32 -15 43 -19 46 -30 148 -30 289 0 154 10 215 46 275 34 57 105 78 154 44z"/>
+      <path d="M15045 9785 c-5 -2 -44 -11 -85 -20 -252 -56 -530 -228 -586 -362 -20 -46 -20 -133 0 -171 9 -17 47 -69 86 -115 78 -95 101 -141 119 -237 19 -99 -9 -292 -51 -352 -10 -14 -18 -28 -18 -31 0 -2 -22 -42 -50 -88 -64 -108 -84 -170 -78 -251 8 -118 59 -189 161 -227 55 -20 76 -21 402 -21 319 0 348 1 398 20 51 19 113 72 135 115 47 92 27 263 -59 505 -18 52 -29 170 -29 331 0 185 -1 183 73 214 42 17 119 20 149 4 11 -6 29 -32 40 -57 51 -114 27 -472 -42 -627 -34 -78 -53 -216 -39 -291 13 -70 20 -84 66 -134 21 -25 55 -47 89 -60 51 -19 77 -20 398 -20 339 0 367 2 441 35 74 33 125 127 125 229 0 67 -33 163 -82 241 -54 86 -98 184 -107 236 -5 30 -12 203 -16 384 -4 221 -10 348 -19 385 -41 166 -144 287 -287 334 -86 28 -156 38 -225 33 -63 -5 -90 -10 -179 -34 -48 -13 -152 -73 -201 -116 -53 -46 -119 -133 -140 -182 -29 -71 -51 -57 -64 41 -21 154 -31 186 -74 229 -28 27 -57 44 -89 53 -43 11 -137 15 -162 7z"/>
+      <path d="M19500 9765 c-190 -51 -336 -130 -446 -242 -54 -54 -94 -136 -94 -192 0 -50 29 -125 70 -179 22 -29 40 -55 40 -58 0 -3 8 -18 19 -32 41 -59 56 -130 56 -267 -1 -155 -15 -212 -81 -322 -81 -133 -107 -198 -112 -283 -5 -93 20 -161 78 -214 69 -62 101 -66 534 -66 364 0 388 1 440 21 67 25 128 89 146 154 17 59 9 179 -15 230 -11 22 -41 78 -67 124 -112 193 -102 130 -108 696 -5 500 -5 500 -32 541 -70 107 -232 141 -428 89z"/>
+      <path d="M17420 7674 c-166 -17 -319 -89 -454 -215 -151 -141 -239 -298 -266 -475 -20 -133 1 -247 58 -308 36 -37 64 -49 142 -55 65 -6 65 -6 71 -366 4 -217 11 -377 18 -402 43 -162 101 -250 213 -330 101 -71 229 -103 413 -103 127 0 188 9 286 40 168 54 264 159 299 328 17 82 9 218 -16 269 -22 43 -71 80 -118 87 -17 3 -64 10 -105 17 -64 10 -78 16 -110 48 -49 50 -63 103 -69 260 -3 106 -2 135 9 142 8 5 49 9 92 9 90 0 152 24 193 74 14 17 32 39 40 49 14 18 43 79 62 132 32 89 42 262 18 318 -7 18 -28 45 -45 62 -32 30 -32 30 -214 40 -182 10 -182 10 -189 104 -3 52 -12 114 -19 139 -15 55 -66 108 -116 121 -47 11 -147 19 -193 15z"/>
+      <path d="M11451 7439 c-80 -16 -171 -86 -217 -169 -56 -100 -69 -150 -69 -270 0 -103 3 -121 26 -171 55 -116 131 -172 234 -172 117 -1 227 78 290 207 45 94 59 161 53 268 -5 73 -11 100 -37 152 -39 79 -94 130 -162 150 -58 18 -56 17 -118 5z"/>
+      <path d="M13192 7330 c-148 -20 -346 -101 -479 -196 -136 -97 -193 -173 -193 -259 0 -64 18 -100 101 -201 131 -161 123 -119 127 -699 3 -348 0 -520 -8 -567 -11 -63 -49 -149 -105 -238 -57 -91 -77 -144 -82 -225 -11 -160 40 -237 186 -281 71 -21 741 -20 839 2 144 32 221 119 222 251 0 76 -26 141 -94 233 -124 168 -146 232 -146 427 0 126 1 133 20 133 13 0 33 -21 61 -65 93 -147 234 -225 409 -225 228 1 373 121 489 403 18 46 48 166 63 252 19 115 16 593 -5 700 -59 310 -169 462 -392 540 -36 13 -80 18 -160 17 -95 0 -120 -4 -185 -27 -111 -41 -200 -106 -278 -204 -27 -35 -48 -22 -57 35 -12 86 -48 145 -103 173 -46 23 -146 32 -230 21z m547 -636 c12 -9 32 -37 44 -63 19 -42 22 -63 22 -231 0 -171 -2 -188 -22 -230 -40 -81 -66 -100 -135 -100 -95 0 -88 -20 -88 255 0 272 7 310 62 358 37 31 82 35 117 11z"/>
+      <path d="M19135 7330 c-366 -23 -588 -141 -683 -367 -20 -49 -25 -75 -25 -168 -2 -108 2 -126 40 -215 38 -87 146 -182 277 -244 40 -19 135 -55 212 -81 219 -74 286 -125 270 -210 -10 -52 -35 -67 -109 -67 -79 1 -123 22 -249 120 -125 97 -223 129 -309 101 -108 -35 -157 -76 -194 -163 -24 -56 -27 -74 -24 -148 3 -70 9 -94 37 -150 102 -208 404 -318 872 -318 402 0 646 70 792 227 89 97 125 207 115 359 -7 117 -43 190 -136 276 -102 93 -167 124 -506 239 -166 57 -237 109 -237 174 0 75 123 111 218 64 26 -13 80 -54 119 -91 99 -92 146 -112 260 -112 129 1 196 36 253 133 25 43 27 54 27 156 0 101 -2 115 -29 170 -73 149 -211 234 -466 289 -131 28 -331 38 -525 26z"/>
+      <path d="M15445 7304 c-182 -44 -299 -104 -417 -213 -175 -162 -258 -377 -258 -676 0 -433 175 -743 507 -900 255 -122 685 -126 947 -10 262 116 427 373 375 582 -16 61 -70 117 -129 133 -74 21 -214 -13 -332 -80 -41 -23 -184 -43 -273 -37 -95 6 -134 16 -203 50 -67 35 -64 37 128 82 63 14 142 33 175 42 33 8 80 19 105 25 46 10 60 14 195 46 106 25 145 43 193 86 127 115 130 397 7 591 -74 117 -217 221 -360 262 -139 40 -161 42 -360 42 -178 0 -211 -3 -300 -25z m292 -479 c49 -32 68 -137 42 -226 -13 -41 -10 -40 -155 -88 -134 -45 -128 -48 -121 57 15 219 118 332 234 257z"/>
+      <path d="M10485 7290 c-44 -13 -106 -70 -132 -119 -37 -69 -49 -159 -34 -248 7 -42 16 -83 21 -92 4 -9 18 -36 29 -61 115 -240 381 -337 529 -192 75 73 105 198 78 325 -34 165 -122 288 -257 361 -39 22 -67 29 -127 32 -42 2 -91 -1 -107 -6z"/>
+      <path d="M12085 6868 c-125 -44 -235 -188 -264 -346 -25 -131 30 -267 129 -318 54 -28 152 -24 215 8 93 48 182 162 211 270 18 70 18 183 -1 239 -42 124 -171 189 -290 147z"/>
+      <path d="M10046 6566 c-47 -18 -90 -57 -124 -116 -24 -40 -27 -55 -27 -140 0 -129 34 -215 122 -310 71 -77 142 -111 232 -111 82 0 115 14 164 72 27 31 40 60 53 116 17 70 17 79 1 153 -9 44 -30 104 -49 137 -87 154 -252 243 -372 199z"/>
+      <path d="M11140 6469 c-91 -13 -160 -46 -267 -126 -251 -189 -405 -530 -364 -810 6 -46 16 -92 21 -101 4 -9 14 -31 20 -49 14 -37 90 -117 134 -141 22 -11 57 -16 121 -17 75 0 98 4 140 24 52 25 137 86 215 154 50 43 46 43 160 2 67 -25 89 -28 215 -29 145 -1 154 1 263 50 153 69 232 236 192 405 -48 203 -273 449 -520 570 -117 57 -233 81 -330 68z"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- Top banner -->
+<div class="topbanner">
+  12 personas ya apuntadas <span class="dot">·</span> Lanzamiento verano 2026 <span style="margin-left:4px">🐾 🇪🇸 🇩🇪</span>
 </div>
 
-<nav>
-  <div class="logo" onclick="scrollTo(0,0)">bondi<span>pets</span></div>
-  <div class="nav-right">
+<!-- Nav -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo" aria-label="Bondi Pets">
+      <svg class="logo-svg" aria-hidden="true"><use href="#bondi-logo"/></svg>
+    </a>
     <div class="nav-links">
-      <a class="nav-link es" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Productos</a>
-      <a class="nav-link en" style="display:none" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Products</a>
-      <a class="nav-link es" onclick="document.getElementById('ciencia').scrollIntoView({behavior:'smooth'})">Ciencia</a>
-      <a class="nav-link en" style="display:none" onclick="document.getElementById('ciencia').scrollIntoView({behavior:'smooth'})">Science</a>
-      <a class="nav-link es" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</a>
-      <a class="nav-link en" style="display:none" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</a>
+      <a href="#productos">Productos</a>
+      <a href="#ciencia">Ciencia</a>
+      <a href="#faq">FAQ</a>
+      <a href="#productos">Quiz</a>
     </div>
-    <a class="nav-quiz" href="quiz.html"><span class="es">🐾 Quiz</span><span class="en" style="display:none">🐾 Quiz</span></a>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="active" data-lang="ES">ES</button>
+        <button data-lang="EN">EN</button>
+      </div>
+      <a href="#cta" class="pill-btn">
+        Avísame
+        <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
-    <button class="btn-cta" onclick="scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.getElementById('hero-email').focus(),500)">
-      <span class="es">AVÍSAME →</span><span class="en" style="display:none">NOTIFY ME →</span>
-    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
-    <div class="eyebrow">
-      <span class="es">LANZAMIENTO VERANO 2026</span>
-      <span class="en" style="display:none">LAUNCHING SUMMER 2026</span>
-    </div>
-    <h1 class="hero-title">
-      <span class="es">Suplementos<br>para perros<br><span class="highlight">que funcionan.</span></span>
-      <span class="en" style="display:none">Supplements<br>for dogs<br><span class="highlight">that work.</span></span>
-    </h1>
-    <p class="hero-sub es">Fórmulas premium con ingredientes respaldados por la ciencia, en soft chews que tu perro va a querer cada día.</p>
-    <p class="hero-sub en" style="display:none">Premium formulas with science-backed ingredients, in soft chews your dog will want every single day.</p>
-    <p class="hero-diff es">18 activos. Piperina para absorción real. Probiótico integrado. Ningún competidor en España lo tiene.</p>
-    <p class="hero-diff en" style="display:none">18 actives. Piperine for real absorption. Integrated probiotic. No competitor in Spain has it.</p>
-    <div class="email-wrap">
-      <input type="email" id="hero-email" placeholder="tu@email.com">
-      <button onclick="submitEmail('hero-email','hero-success','.email-wrap button','hero-error')">
-        <span class="es">AVÍSAME</span><span class="en" style="display:none">NOTIFY ME</span>
-      </button>
-    </div>
-    <p class="form-disclaimer es">Te avisaremos en exclusiva 48h antes del lanzamiento. Sin spam.</p>
-    <p class="form-disclaimer en" style="display:none">Exclusive notice 48h before launch. No spam.</p>
-    <a class="hero-quiz-link es" href="quiz.html">¿No sabes cuál elegir? Haz el quiz →</a>
-    <a class="hero-quiz-link en" style="display:none" href="quiz.html">Not sure which one? Take the quiz →</a>
-    <p class="success-msg" id="hero-success">
-      <span class="es">✓ ¡Apuntado! Te avisamos pronto.</span>
-      <span class="en" style="display:none">✓ You're in! We'll be in touch.</span>
-    </p>
-    <p class="error-msg" id="hero-error">
-      <span class="es">✗ Algo falló. Vuelve a intentarlo en un momento.</span>
-      <span class="en" style="display:none">✗ Something went wrong. Please try again.</span>
-    </p>
-
-    <div class="trust-bar">
-      <div class="avatars">
-        <div style="background:#4FC3E8">A</div>
-        <div style="background:#F29130">M</div>
-        <div style="background:#F9E64A">J</div>
-        <div style="background:#FFF8EC">R</div>
-      </div>
-      <span class="es"><strong id="counter-num2">143</strong> personas ya apuntadas</span>
-      <span class="en" style="display:none"><strong id="counter-num3">143</strong> people signed up</span>
+<!-- Hero -->
+<section id="top" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="reveal eyebrow-pill"><span class="led"></span> Lanzamiento verano 2026</div>
+      <h1 class="reveal reveal-delay-1">
+        Suplementos<br>para perros<br>
+        <em><span class="hl-mark">que funcionan.</span></em>
+      </h1>
+      <p class="reveal reveal-delay-2 hero-sub">
+        Fórmulas premium con ingredientes respaldados por la ciencia, en soft chews que tu perro va a querer cada día.
+      </p>
+      <p class="reveal reveal-delay-3 hero-usp">
+        <strong>18 activos.</strong> Piperina para absorción real. Probiótico integrado. Ningún competidor en España lo tiene.
+      </p>
+      <form class="reveal reveal-delay-4 email-form" id="hero-form">
+        <input type="email" placeholder="tu@email.com" required>
+        <button type="submit">Avísame</button>
+      </form>
+      <p class="reveal reveal-delay-4 hero-micro">
+        Te avisaremos en exclusiva 48h antes del lanzamiento. Sin spam.
+      </p>
+      <a href="#productos" class="reveal reveal-delay-5 hero-quiz-link">
+        ¿No sabes cuál elegir? Haz el quiz →
+      </a>
     </div>
 
-    <div class="hero-sep"></div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-num">18</div>
-        <div class="stat-lbl es">ingredientes activos<br><span class="stat-sub">(vs 6-8 del estándar)</span></div>
-        <div class="stat-lbl en" style="display:none">active ingredients<br><span class="stat-sub">(vs 6-8 standard)</span></div>
+    <div class="hero-visual">
+      <div class="hero-circle">
+        <video class="hero-video" autoplay muted loop playsinline poster="images/hero/hero-dog-poster.jpg">
+          <source src="videos/hero/hero-dog.webm" type="video/webm">
+          <source src="videos/hero/hero-dog.mp4" type="video/mp4">
+          <img src="images/hero/hero-dog.png" alt="Border Collie comiendo un soft chew Bondi Pets en un jardín al atardecer">
+        </video>
       </div>
-      <div class="stat">
-        <div class="stat-num">3x</div>
-        <div class="stat-lbl es">más activos que<br><span class="stat-sub">suplementos típicos</span></div>
-        <div class="stat-lbl en" style="display:none">more actives than<br><span class="stat-sub">typical supplements</span></div>
+      <div class="badge-float b1">
+        <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3l2.6 5.8 6.3.7-4.7 4.3 1.3 6.2L12 17l-5.5 3 1.3-6.2L3.1 9.5l6.3-.7L12 3z" fill="currentColor"/>
+        </svg>
+        18 activos
       </div>
-      <div class="stat">
-        <div class="stat-num">0</div>
-        <div class="stat-lbl es">rellenos artificiales<br><span class="stat-sub">ni excipientes inútiles</span></div>
-        <div class="stat-lbl en" style="display:none">artificial fillers<br><span class="stat-sub">no useless excipients</span></div>
+      <div class="badge-float b2">
+        <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <ellipse cx="7" cy="10" rx="2" ry="2.6" fill="currentColor"/>
+          <ellipse cx="12" cy="7.5" rx="2" ry="2.8" fill="currentColor"/>
+          <ellipse cx="17" cy="10" rx="2" ry="2.6" fill="currentColor"/>
+          <ellipse cx="5" cy="15" rx="1.7" ry="2.1" fill="currentColor"/>
+          <path d="M12 12c-3.2 0-5.8 2.4-5.8 4.8 0 1.8 1.5 2.7 3 2.7 1.1 0 1.7-.5 2.8-.5s1.7.5 2.8.5c1.5 0 3-.9 3-2.7 0-2.4-2.6-4.8-5.8-4.8z" fill="currentColor"/>
+        </svg>
+        Sin rellenos
       </div>
     </div>
   </div>
 
-  <div class="hero-right">
-    <div class="hero-stage">
-      <img src="images/hero-dog-eating.webp" alt="Golden retriever feliz recibiendo un soft chew Bondi Pets en una cocina luminosa" width="700" height="700">
+  <div class="container hero-stats">
+    <div class="reveal stat">
+      <div class="num">18</div>
+      <div class="lbl">ingredientes activos por chew</div>
     </div>
-    <div class="floater floater-top">⭐ 18 ACTIVOS</div>
-    <div class="floater floater-bot">🌿 SIN RELLENOS</div>
-  </div>
-</section>
-
-<!-- BENEFICIOS -->
-<section class="benefits" id="ciencia">
-  <div class="benefits-grid">
-    <div class="benefit">
-      <div class="benefit-icon">🔬</div>
-      <h4 class="es">Ciencia real</h4>
-      <h4 class="en" style="display:none">Real science</h4>
-      <p class="es">Cada activo con evidencia clínica.</p>
-      <p class="en" style="display:none">Every active with clinical evidence.</p>
+    <div class="reveal reveal-delay-1 stat">
+      <div class="num">3<em>x</em></div>
+      <div class="lbl">más activos que suplementos típicos del mercado</div>
     </div>
-    <div class="benefit">
-      <div class="benefit-icon">✨</div>
-      <h4 class="es">Fórmula completa</h4>
-      <h4 class="en" style="display:none">Complete formula</h4>
-      <p class="es">18 activos, no 5 como el resto.</p>
-      <p class="en" style="display:none">18 actives, not 5 like the rest.</p>
-    </div>
-    <div class="benefit">
-      <div class="benefit-icon">😋</div>
-      <h4 class="es">Les encanta</h4>
-      <h4 class="en" style="display:none">Dogs love it</h4>
-      <p class="es">Soft chew irresistible.</p>
-      <p class="en" style="display:none">Irresistible soft chew.</p>
-    </div>
-    <div class="benefit">
-      <div class="benefit-icon">🛡️</div>
-      <h4 class="es">Transparencia total</h4>
-      <h4 class="en" style="display:none">Full transparency</h4>
-      <p class="es">Dosis reales, etiquetas claras.</p>
-      <p class="en" style="display:none">Real doses, clear labels.</p>
+    <div class="reveal reveal-delay-2 stat">
+      <div class="num">0</div>
+      <div class="lbl">rellenos artificiales, azúcares o colorantes</div>
     </div>
   </div>
 </section>
 
-<!-- VIDEO SHOWCASE -->
-<section class="video-showcase">
+<!-- Values -->
+<section class="values">
+  <div class="container values-grid">
+    <div class="reveal value">
+      <div class="ic">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M15 4v10L7 30a3 3 0 0 0 2.6 4.5h20.8A3 3 0 0 0 33 30l-8-16V4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 4h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="17" cy="26" r="1.5" fill="currentColor"/>
+          <circle cx="22" cy="22" r="1" fill="currentColor"/>
+          <circle cx="24" cy="29" r="1.5" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="ttl">Ciencia real</div>
+      <div class="desc">Cada activo con evidencia clínica publicada.</div>
+    </div>
+    <div class="reveal reveal-delay-1 value">
+      <div class="ic">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="20" cy="20" r="2" fill="currentColor"/>
+          <circle cx="13" cy="14" r="2" fill="currentColor"/>
+          <circle cx="27" cy="14" r="2" fill="currentColor"/>
+          <circle cx="13" cy="26" r="2" fill="currentColor"/>
+          <circle cx="27" cy="26" r="2" fill="currentColor"/>
+          <path d="M20 20L13 14M20 20L27 14M20 20L13 26M20 20L27 26" stroke="currentColor" stroke-width="1.4" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="ttl">Fórmula completa</div>
+      <div class="desc">18 activos por chew, no 5 como el resto.</div>
+    </div>
+    <div class="reveal reveal-delay-2 value">
+      <div class="ic">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 33s-12-7-12-16a7 7 0 0 1 12-5 7 7 0 0 1 12 5c0 9-12 16-12 16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="ttl">Les encanta</div>
+      <div class="desc">Soft chew sabor pollo irresistible.</div>
+    </div>
+    <div class="reveal reveal-delay-3 value">
+      <div class="ic">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M4 20s6-10 16-10 16 10 16 10-6 10-16 10S4 20 4 20z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="20" cy="20" r="4.5" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <div class="ttl">Transparencia total</div>
+      <div class="desc">Dosis reales en mg, etiquetas claras.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Ingredients -->
+<section id="ciencia" class="ingredients">
   <div class="container">
-    <div class="section-header">
-      <h2 class="es">Cada chew. Cada ingrediente.</h2>
-      <h2 class="en" style="display:none">Every chew. Every ingredient.</h2>
-      <p class="es">Mira lo que hay dentro de cada Bondi Pets.</p>
-      <p class="en" style="display:none">See what's inside every Bondi Pets.</p>
-    </div>
-    <div class="video-container">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="videos/exploded-hero-poster.jpg"
-        aria-label="Vídeo del chew Bondi Pets revelando sus ingredientes naturales"
-      >
-        <source src="videos/exploded-hero-web.mp4" type="video/mp4">
-        <source src="videos/exploded-hero.mp4" type="video/mp4">
-        Tu navegador no soporta vídeo HTML5.
+    <h2 class="reveal">Cada chew. Cada ingrediente.</h2>
+    <p class="reveal reveal-delay-1 subtitle">Mira lo que hay dentro de cada Bondi Pets.</p>
+    <div class="reveal reveal-delay-2 chew-stage">
+      <video class="chew-video" autoplay muted loop playsinline poster="videos/product-chew/exploded-hero-poster.jpg">
+        <source src="videos/product-chew/exploded-hero-web.mp4" type="video/mp4">
+        <source src="videos/product-chew/exploded-hero.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="ingredients-badges-row">
-      <span class="badge">Glucosamina</span>
-      <span class="badge">Probiótico</span>
-      <span class="badge">Condroitina</span>
-      <span class="badge">Mejillón Verde</span>
-      <span class="badge">MSM</span>
-      <span class="badge">Cúrcuma + Piperina</span>
+    <div class="ingredient-pills">
+      <span class="reveal ing-pill" style="transition-delay:120ms">Glucosamina</span>
+      <span class="reveal ing-pill featured" style="transition-delay:160ms"><span class="dot"></span>Probiótico</span>
+      <span class="reveal ing-pill" style="transition-delay:200ms">Condroitina</span>
+      <span class="reveal ing-pill" style="transition-delay:240ms">Mejillón Verde</span>
+      <span class="reveal ing-pill" style="transition-delay:280ms">MSM</span>
+      <span class="reveal ing-pill featured" style="transition-delay:320ms"><span class="dot"></span>Cúrcuma + Piperina</span>
+      <span class="reveal ing-pill" style="transition-delay:360ms">Colágeno</span>
+      <span class="reveal ing-pill" style="transition-delay:400ms">Boswellia</span>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="productos">
-  <div class="products-head">
-    <div class="section-eyebrow es">NUESTROS PRODUCTOS</div>
-    <div class="section-eyebrow en" style="display:none">OUR PRODUCTS</div>
-    <h2 class="section-title es">Tres fórmulas, <em>tres momentos.</em></h2>
-    <h2 class="section-title en" style="display:none">Three formulas, <em>three moments.</em></h2>
-    <p class="section-sub es">Elige la que más necesita tu perro.</p>
-    <p class="section-sub en" style="display:none">Choose the one your dog needs most.</p>
-  </div>
-  <div class="products-grid">
+<!-- Products -->
+<section id="productos" class="products">
+  <div class="container">
+    <div class="reveal eyebrow-center">Nuestros productos</div>
+    <h2 class="reveal reveal-delay-1">
+      Tres fórmulas, <em class="display-italic">tres momentos.</em>
+    </h2>
+    <p class="reveal reveal-delay-2 subtitle">Elige la que más necesita tu perro.</p>
 
-    <div class="pcard pc-joint">
-      <div class="pc-img-wrap">
-        <img src="images/doypack-condroprotector.webp" alt="Doypack Bondi Pets Condroprotector para articulaciones con 18 activos" loading="lazy" width="220" height="290">
-      </div>
-      <h3 class="pc-problem"><span class="es">ARTICULACIONES</span><span class="en" style="display:none">JOINTS</span></h3>
-      <div class="pc-title es">Condroprotector</div>
-      <div class="pc-title en" style="display:none">Joint Support</div>
-      <p class="pc-desc es">18 activos para movilidad real: glucosamina, colágeno, piperina y probiótico.</p>
-      <p class="pc-desc en" style="display:none">18 actives for real mobility: glucosamine, collagen, piperine and probiotic.</p>
-      <div class="pc-chips">
-        <span class="pc-chip">PIPERINA</span>
-        <span class="pc-chip">BOSWELLIA</span>
-      </div>
-      <button class="pc-btn"><span class="es">VER DETALLES →</span><span class="en" style="display:none">SEE DETAILS →</span></button>
+    <div class="product-grid">
+      <article class="reveal reveal-delay-1 product-card joint">
+        <div class="p-eyebrow">Condroprotector</div>
+        <div class="p-pack">
+          <img src="images/sku1-joint-orange.webp" alt="Bondi Pets Hip & Joint + Probiotics packaging" loading="lazy" width="220" height="290">
+        </div>
+        <h3>Articulaciones</h3>
+        <div class="p-sub">Hip &amp; Joint + Probiotics</div>
+        <p class="p-desc">Movilidad, articulaciones y reducción de la inflamación. Único con probiótico integrado.</p>
+        <div class="p-tags">
+          <span class="p-tag">Piperina</span>
+          <span class="p-tag">Boswellia</span>
+        </div>
+        <a href="#cta" class="p-cta">
+          Ver detalles
+          <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="reveal reveal-delay-2 product-card biotics">
+        <div class="p-eyebrow">Pre + Pro + Post</div>
+        <div class="p-pack">
+          <img src="images/sku2-biotics-cyan.webp" alt="Bondi Pets Pre + Pro + Post Biotics packaging" loading="lazy" width="220" height="290">
+        </div>
+        <h3>Digestión</h3>
+        <div class="p-sub">Pre + Pro + Post Biotics</div>
+        <p class="p-desc">Probióticos, prebióticos, postbióticos y enzimas digestivas en un solo chew.</p>
+        <div class="p-tags">
+          <span class="p-tag">Postbióticos</span>
+          <span class="p-tag">Enzimas</span>
+        </div>
+        <a href="#cta" class="p-cta">
+          Ver detalles
+          <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="reveal reveal-delay-3 product-card multi">
+        <div class="p-eyebrow">Multivitamin</div>
+        <div class="p-pack">
+          <img src="images/sku3-multi-yellow.webp" alt="Bondi Pets Daily Multivitamin packaging" loading="lazy" width="220" height="290">
+        </div>
+        <h3>Vitalidad</h3>
+        <div class="p-sub">Daily Multivitamin</div>
+        <p class="p-desc">Vitaminas, minerales y antioxidantes para energía diaria, pelo brillante y defensas.</p>
+        <div class="p-tags">
+          <span class="p-tag">Omegas</span>
+          <span class="p-tag">Antioxidantes</span>
+        </div>
+        <a href="#cta" class="p-cta">
+          Ver detalles
+          <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
     </div>
 
-    <div class="pcard pc-biotics">
-      <div class="pc-img-wrap">
-        <img src="images/doypack-biotics.webp" alt="Doypack Bondi Pets Pre+Pro+Post Biotics para digestión y microbioma" loading="lazy" width="220" height="290">
-      </div>
-      <h3 class="pc-problem"><span class="es">DIGESTIÓN</span><span class="en" style="display:none">DIGESTION</span></h3>
-      <div class="pc-title es">Pre+Pro+Post</div>
-      <div class="pc-title en" style="display:none">Pre+Pro+Post</div>
-      <p class="pc-desc es">Triple acción para un microbioma equilibrado en un solo chew diario.</p>
-      <p class="pc-desc en" style="display:none">Triple action for a balanced microbiome in one daily chew.</p>
-      <div class="pc-chips">
-        <span class="pc-chip">MICROBIOMA</span>
-        <span class="pc-chip">ENZIMAS</span>
-      </div>
-      <button class="pc-btn"><span class="es">VER DETALLES →</span><span class="en" style="display:none">SEE DETAILS →</span></button>
+    <div class="reveal quiz-block">
+      <p>¿No sabes cuál necesita tu perro?</p>
+      <a href="quiz.html" class="pill-btn">
+        Haz el quiz
+        <svg class="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
-
-    <div class="pcard pc-multi">
-      <div class="pc-img-wrap">
-        <img src="images/doypack-multivitamin.webp" alt="Doypack Bondi Pets Multivitamin con vitaminas minerales y antioxidantes" loading="lazy" width="220" height="290">
-      </div>
-      <h3 class="pc-problem"><span class="es">VITALIDAD</span><span class="en" style="display:none">VITALITY</span></h3>
-      <div class="pc-title es">Multivitamin</div>
-      <div class="pc-title en" style="display:none">Multivitamin</div>
-      <p class="pc-desc es">Vitaminas, minerales y antioxidantes para la vitalidad diaria, de la cabeza a la cola.</p>
-      <p class="pc-desc en" style="display:none">Vitamins, minerals and antioxidants for daily vitality, head to tail.</p>
-      <div class="pc-chips">
-        <span class="pc-chip">VIT A-E</span>
-        <span class="pc-chip">ZINC</span>
-      </div>
-      <button class="pc-btn"><span class="es">VER DETALLES →</span><span class="en" style="display:none">SEE DETAILS →</span></button>
-    </div>
-
-  </div>
-
-  <div class="quiz-cta">
-    <p class="es">¿No sabes cuál necesita tu perro?</p>
-    <p class="en" style="display:none">Not sure which one your dog needs?</p>
-    <a class="btn-outline-navy" href="quiz.html"><span class="es">HAZ EL QUIZ →</span><span class="en" style="display:none">TAKE THE QUIZ →</span></a>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="faq-inner">
-    <h2 class="section-title es">Todo lo que necesitas saber</h2>
-    <h2 class="section-title en" style="display:none">Everything you need to know</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+<section id="faq" class="faq">
+  <div class="container">
+    <h2 class="reveal">Todo lo que necesitas saber.</h2>
+    <p class="reveal reveal-delay-1 subtitle">Si falta algo, escríbenos a hola@bondipets.eu</p>
+    <div class="reveal reveal-delay-2 faq-list">
+      <div class="faq-item open">
+        <button class="faq-q">
           <span class="faq-num">01</span>
-          <span class="faq-q-text"><span class="es">¿Cuándo puedo comprar Bondi Pets?</span><span class="en" style="display:none">When can I buy Bondi Pets?</span></span>
-          <span class="faq-arrow">▼</span>
+          <span class="faq-text">¿Cuándo puedo comprar Bondi Pets?</span>
+          <span class="faq-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">El lanzamiento es verano 2026 en Amazon España y Alemania. Los primeros apuntados reciben descuento de lanzamiento y aviso exclusivo 48h antes.</div>
         </div>
-        <div class="faq-a"><span class="es">Lanzamos en Amazon España y Amazon Alemania en verano 2026. Apúntate arriba y serás el primero en saberlo — con descuento de lanzamiento incluido.</span><span class="en" style="display:none">We launch on Amazon Spain and Amazon Germany in summer 2026. Sign up above and you'll be the first to know — including a launch discount.</span></div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q">
           <span class="faq-num">02</span>
-          <span class="faq-q-text"><span class="es">¿Son seguros los ingredientes para mi perro?</span><span class="en" style="display:none">Are the ingredients safe for my dog?</span></span>
-          <span class="faq-arrow">▼</span>
+          <span class="faq-text">¿Son seguros los ingredientes para mi perro?</span>
+          <span class="faq-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Todos nuestros activos cuentan con evidencia clínica y están formulados dentro de las dosis recomendadas para perros. Cada lote pasa análisis de estabilidad y control microbiológico antes de llegar a tu perro.</div>
         </div>
-        <div class="faq-a"><span class="es">Sí. Todos los ingredientes están seleccionados con base en evidencia clínica y están dentro de los límites de seguridad establecidos para perros. Las fórmulas cumplen con la normativa europea de pienso complementario (Reg. 767/2009).</span><span class="en" style="display:none">Yes. All ingredients are selected based on clinical evidence and are within established safety limits for dogs. The formulas comply with European complementary feed regulations (Reg. 767/2009).</span></div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q">
           <span class="faq-num">03</span>
-          <span class="faq-q-text"><span class="es">¿Por qué soft chews y no pastillas o polvo?</span><span class="en" style="display:none">Why soft chews and not pills or powder?</span></span>
-          <span class="faq-arrow">▼</span>
+          <span class="faq-text">¿Por qué soft chews y no pastillas o polvo?</span>
+          <span class="faq-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Los soft chews tienen una tasa de aceptación por encima del 95% frente al 40–60% de las pastillas. Menos peleas, adherencia real y palatabilidad sabor pollo que les encanta.</div>
         </div>
-        <div class="faq-a"><span class="es">Los soft chews tienen la mayor tasa de aceptación por parte de los perros — más del 90% los acepta sin resistencia. Sin esconder pastillas en comida, sin mezclar polvos. Tu perro lo toma como una chuche.</span><span class="en" style="display:none">Soft chews have the highest acceptance rate among dogs — over 90% accept them without resistance. No hiding pills in food, no mixing powders. Your dog takes it like a treat.</span></div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q">
           <span class="faq-num">04</span>
-          <span class="faq-q-text"><span class="es">¿Qué hace diferente al condroprotector de Bondi Pets?</span><span class="en" style="display:none">What makes Bondi Pets joint supplement different?</span></span>
-          <span class="faq-arrow">▼</span>
+          <span class="faq-text">¿Qué hace diferente al condroprotector de Bondi Pets?</span>
+          <span class="faq-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Somos los únicos en España que combinamos Piperina (que multiplica hasta x20 la absorción de la cúrcuma) con un probiótico integrado — directamente resolvemos la principal razón de devolución del mercado DE: trastornos digestivos al tomar condroprotector.</div>
         </div>
-        <div class="faq-a"><span class="es">Tres cosas que ningún competidor en Amazon.es tiene: (1) Piperina para maximizar la absorción de la cúrcuma, (2) Probiótico Bacillus subtilis para salud intestinal, (3) 18 activos frente a los 5-6 de media de la competencia.</span><span class="en" style="display:none">Three things no competitor on Amazon.es has: (1) Piperine to maximize turmeric absorption, (2) Bacillus subtilis probiotic for gut health, (3) 18 actives vs the competition's average of 5-6.</span></div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q">
           <span class="faq-num">05</span>
-          <span class="faq-q-text"><span class="es">¿Dónde se fabrican los productos?</span><span class="en" style="display:none">Where are the products manufactured?</span></span>
-          <span class="faq-arrow">▼</span>
+          <span class="faq-text">¿Dónde se fabrican los productos?</span>
+          <span class="faq-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Bondi Pets se formula y diseña en Barcelona, donde también registramos como operador de pienso complementario según la Reg. EU 767/2009. Cada lote cumple los estándares de calidad y trazabilidad europeos, con análisis de estabilidad y control microbiológico antes de llegar a tu perro.</div>
         </div>
-        <div class="faq-a"><span class="es">Bondi Pets está formulado en Barcelona por nuestro equipo. Cumple con toda la normativa europea de pienso complementario (Reg. 767/2009), pasa tests de estabilidad independientes, y cada lote se somete a inspección y análisis antes de llegar al consumidor.</span><span class="en" style="display:none">Bondi Pets is formulated in Barcelona by our team. It complies with full European complementary feed regulations (Reg. 767/2009), passes independent stability testing, and every batch is inspected and analyzed before reaching the consumer.</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-band">
-  <h2 class="es">Sé el primero en saberlo</h2>
-  <h2 class="en" style="display:none">Be the first to know</h2>
-  <p class="es">Lanzamos en Amazon España y Alemania en verano 2026. Los primeros apuntados reciben descuento de lanzamiento.</p>
-  <p class="en" style="display:none">Launching on Amazon Spain and Germany in summer 2026. Early sign-ups get a launch discount.</p>
-  <div class="cta-form">
-    <input type="email" id="cta-email" placeholder="tu@email.com">
-    <button onclick="submitEmail('cta-email','cta-success','.cta-form button','cta-error')"><span class="es">AVÍSAME</span><span class="en" style="display:none">NOTIFY ME</span></button>
+<!-- CTA final -->
+<section id="cta" class="cta-final">
+  <div class="container">
+    <h2 class="reveal">Sé el primero<br><em>en saberlo.</em></h2>
+    <p class="reveal reveal-delay-1 sub">
+      Lanzamos en Amazon España y Alemania en verano 2026. Los primeros apuntados reciben descuento de lanzamiento.
+    </p>
+    <form class="reveal reveal-delay-2 email-form" id="cta-form">
+      <input type="email" placeholder="tu@email.com" required>
+      <button type="submit">Avísame</button>
+    </form>
   </div>
-  <p class="cta-success" id="cta-success"><span class="es">✓ ¡Genial! Te avisamos pronto.</span><span class="en" style="display:none">✓ Great! We'll be in touch.</span></p>
-  <p class="cta-error" id="cta-error"><span class="es">✗ Algo falló. Vuelve a intentarlo en un momento.</span><span class="en" style="display:none">✗ Something went wrong. Please try again.</span></p>
-</div>
+</section>
 
-<footer>
-  <div class="footer-logo">bondi<span>pets</span></div>
-  <div class="footer-info">© 2026 Bondi Pets SL · Barcelona · <a href="mailto:hola@bondipets.eu">hola@bondipets.eu</a> · bondipets.eu</div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="wordmark">
+      <svg class="wordmark-svg" aria-hidden="true"><use href="#bondi-logo"/></svg>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#productos">Articulaciones</a></li>
+          <li><a href="#productos">Digestión</a></li>
+          <li><a href="#productos">Vitalidad</a></li>
+          <li><a href="quiz.html">Haz el quiz</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ciencia</h4>
+        <ul>
+          <li><a href="#ciencia">Ingredientes</a></li>
+          <li><a href="#ciencia">Evidencia clínica</a></li>
+          <li><a href="#ciencia">Fabricación</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="mailto:hola@bondipets.eu">Contacto</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Bondi Pets SL · Barcelona · hola@bondipets.eu · bondipets.eu</div>
+      <div>Hecho con calma en Barcelona 🇪🇸</div>
+    </div>
+  </div>
 </footer>
 
+<!-- Toast -->
+<div class="toast"></div>
+
+<!-- MailerLite hidden form (shared por los .email-form del hero y el CTA) -->
 <iframe name="ml-target" id="ml-target" style="display:none" aria-hidden="true" title="MailerLite submission target"></iframe>
-<form id="ml-form" action="https://assets.mailerlite.com/jsonp/2274921/forms/185001378556413931/subscribe" method="post" target="ml-target" style="display:none" aria-hidden="true">
+<form id="ml-form"
+      action="https://assets.mailerlite.com/jsonp/2274921/forms/185001378556413931/subscribe"
+      method="post" target="ml-target" style="display:none" aria-hidden="true">
   <input type="email" name="fields[email]" id="ml-email">
   <input type="hidden" name="ml-submit" value="1">
   <input type="hidden" name="anticsrf" value="true">
 </form>
+
 <script src="js/main.js"></script>
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"></script>
 </body>

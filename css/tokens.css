@@ -1,4 +1,5 @@
 :root {
+  /* ========= Legacy naming (preservado para quiz.css) ========= */
   --color-cocoa: #1A1410;
   --color-cream: #FFF8EC;
   --color-white: #FFFFFF;
@@ -27,4 +28,33 @@
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-pill: 999px;
+
+  /* ========= Design-ref naming (Fase A ampliación 2026-04-22) ========= */
+  --cocoa: #1A1410;
+  --cocoa-80: #1A1410cc;
+  --cocoa-60: #1A141099;
+  --cocoa-40: #1A141066;
+  --cocoa-20: #1A141033;
+  --cocoa-10: #1A14101a;
+  --cocoa-warm: #2a1f18;
+
+  --cream: #FFF8EC;
+  --cream-2: #F7EFDC;
+  --cream-3: #EEE3C9;
+
+  --joint: #F29130;
+  --biotics: #4FC3E8;
+  --multi: #F9E64A;
+
+  --border: rgba(26,20,16,0.14);
+  --border-soft: rgba(26,20,16,0.08);
+
+  --f-display: "Fraunces", "Times New Roman", serif;
+  --f-body: "Inter", -apple-system, system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --page: 1240px;
+  --gutter: clamp(20px, 4vw, 48px);
+
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 }

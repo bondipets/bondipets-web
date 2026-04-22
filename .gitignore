@@ -25,3 +25,8 @@ assets-source/
 tests/
 prompts/
 images/_archive-old-packaging/
+web-assets-production/
+
+# Design reference y brief (uso local)
+bondi_design_reference_v2.html
+CLAUDE_CODE_BRIEF.md
