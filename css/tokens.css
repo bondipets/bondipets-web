@@ -1,0 +1,30 @@
+:root {
+  --color-cocoa: #1A1410;
+  --color-cream: #FFF8EC;
+  --color-white: #FFFFFF;
+
+  --color-sku-joint: #F29130;
+  --color-sku-biotics: #4FC3E8;
+  --color-sku-multi: #F9E64A;
+
+  --color-sku-joint-dark: #8B4A0E;
+  --color-sku-biotics-dark: #1E5A7A;
+  --color-sku-multi-dark: #7A6A0A;
+
+  --color-text-primary: var(--color-cocoa);
+  --color-text-secondary: rgba(26, 20, 16, 0.7);
+  --color-text-tertiary: rgba(26, 20, 16, 0.5);
+  --color-border-subtle: rgba(26, 20, 16, 0.08);
+  --color-border-default: rgba(26, 20, 16, 0.15);
+
+  --bg-page: var(--color-cream);
+  --bg-card: var(--color-white);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+}

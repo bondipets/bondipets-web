@@ -150,7 +150,7 @@ function submitEmail(inputId,successId,btnSelector,errorId){
   var b=document.querySelector(btnSelector);
   if(e)e.style.display='none';
   if(!(i.value&&i.value.includes('@'))){
-    i.style.outline='3px solid #FF2D87';setTimeout(function(){i.style.outline=''},1000);
+    i.style.outline='2px solid #B3261E';setTimeout(function(){i.style.outline=''},1000);
     return;
   }
   if(b)b.disabled=true;

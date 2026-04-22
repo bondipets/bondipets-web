@@ -18,3 +18,10 @@ skills/
 .env
 .env.local
 .env.*.local
+
+assets-source/
+
+# Development artifacts (no publicar)
+tests/
+prompts/
+images/_archive-old-packaging/
